@@ -24,7 +24,8 @@
   "homepage": "https://github.com/SparkPost/pizza-bot#readme",
   "dependencies": {
     "pizzapi": "0.0.8",
-    "skellington": "^1.1.1"
+    "skellington": "^1.1.1",
+    "skellington-logger": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
