@@ -10,6 +10,7 @@ Reuse everything you can from the last exercise. For instance: keep those method
 
 
 Last Exercise: https://github.com/SparkPost/pizza-bot/tree/01-stores
+
 Next Exercise: https://github.com/SparkPost/pizza-bot/tree/03-menu
 
 ## Conversations
@@ -78,7 +79,7 @@ will be exposed as `vars` in the template: `Here is your address: {{ vars.addres
 
 **HINT:** You should set the `address` the user types in and any `stores` you find as variables on your conversation.
 
-#### Looping Over Arrays With Mustache
+### Looping Over Arrays With Mustache
 
 Let's say you have an array of store addresses and you added that as a variable named `stores` to your conversation. 
 To print each store address on it's own line, you could do something like this:
@@ -95,8 +96,9 @@ If we had an array of objects, you could use the property name in the mustache t
 
 ## Next Exercise
 
-Great Job! You now can ask a user a question and respond to it! You can store information for later. 
-These are both super important concepts in bot-building! Now things are going to get interesting!
+Great Job! You now can start a conversation with a user, ask a them a question, and respond based on what they say. 
+You can even store information for later. These are all super important concepts in bot-building! 
+Now things are going to get interesting!
 
 Next Exercise: https://github.com/SparkPost/pizza-bot/tree/03-menu
 
