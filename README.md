@@ -7,11 +7,18 @@ Order :pizza: From Slack
 * If that request fails, give the user an error message and ask for their store again.
 If the request succeeds, set the result that comes back from the `pizzapi` library as a variable on the conversation.
 
+## Resources
+
+* [Botkit docs and source](https://github.com/howdyai/botkit)
+* [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
+* [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
+* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+
 ## Concepts
 
 ### Docs Aren't the Truth
 
-Uh-oh... the docs say this is how you should get Store info:
+Uh-oh... the [docs](http://riaevangelist.github.io/node-dominos-pizza-api/) say this is how you should get Store info:
 
 ```js
 const myStore = new pizzapi.Store()
