@@ -1,7 +1,7 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Objective 1
+## Exercise 1
 
 * Add a new plugin to the plugins directory named `order.js`.
 * Have the plugin listen to `direct_message` and `direct_mention` events for the phrase "I want a pizza". 
@@ -40,6 +40,8 @@ Take a look at `plugins/welcome.js` for an example of setting up a plugin.
 
 Don't forget to require your new plugin in `index.js` and add it to the `plugins` array.
 
+Use `npm test` to check your code for style consistency.
+
 Use `bot.reply(message, 'Your reply')` inside your `controller.hears` callback to respond. `Your reply` will appear in Slack.
 
 If you want to test your regular expression, type `node` in your terminal. That will open the Node "REPL", an interactive terminal
@@ -57,4 +59,4 @@ Great job! You've made your first Skellington plugin. Plugins are a great way to
 
 This one isn't so useful yet, in the next step we're going to start improving this plugin in the next exercise.
 
-https://github.com/SparkPost/pizza-bot/tree/02-stores
+Next exercise: https://github.com/SparkPost/pizza-bot/tree/02-stores
