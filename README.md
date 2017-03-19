@@ -1,98 +1,60 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Welcome Pizza Botter
+## Objective 1
 
-Howdy :wave: We're going to build a bot today. An awesome bot that will order you hot, delicious pizza. 
-From Dominos. So, hot pizza. Well, maybe hot, but definitely at least warm pizza. From Dominos.
-OK, let's not get hung up on the definitions of "pizza" or "food". The bot will be awesome, I promise. 
+* Add a new plugin to the plugins directory named `order.js`.
+* Have the plugin listen to `direct_message` and `direct_mention` events for the phrase "I want a pizza". 
+* The plugin should respond telling the user it is looking for nearby stores (you don't have to find them yet, we'll do that next).
+* The plugin should have some help text.
 
-And when you're done you'll get a feel for how to take an idea and make it real!
+## Concepts
 
-Before we begin, let's do a little set up.
+### Skellington Plugins
+
+Plugins are a core concept of [Skellington](https://github.com/Skellington-Closet/skellington). Plugins group related 
+interactions (like everything you need to order a pizza). Each plugin can specify it's own help text. Type 
+`@<botname> help` into Slack to see how the help text is used.
+
+Plugins help keep your code organized and clean. Organized and clean code is a favor to your future self.
+
+### controller.hears
+
+This interface comes from [Botkit](https://github.com/howdyai/botkit). `controller.hears` and lets you specify an array of 
+[regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) that should match
+the user input, event types, and a callback function to handle the message from the user.
  
+There are 4 event types:
+ * direct_message: Fired when you direct message a bot
+ * direct_mention: Fired when your message begins with `@<botname>` in any channel the bot is in, other than direct messages.
+ * mention: Fired when your message contains `@<botname>` anywhere but the first word. Works in all channels the bot is in, other than direct messages.
+ * ambient: Fired for all messages in any channel the bot is in, other than direct messages.
+ 
+The callback function takes a `bot` and `message` object. The `bot` is a reference to the bot that heard the message, and the
+message provides some details about which user said what text in which channel. You can `console.log` out the messages to see 
+what they contain.
 
-## Things You Need Before We Start
+## Helpful Hints
 
+Take a look at `plugins/welcome.js` for an example of setting up a plugin.
 
-### Node
+Don't forget to require your new plugin in `index.js` and add it to the `plugins` array.
 
-You will need to have Node installed as well. The libraries we use require Node 4+ (the examples in this repo use the current release, Node 6). 
-If you have an older version, check out [nvm](https://github.com/creationix/nvm).
+Use `bot.reply(message, 'Your reply')` inside your `controller.hears` callback to respond. `Your reply` will appear in Slack.
 
-Check if you have Node installed by typing `node --version` in your terminal. If you get an error, download it here: https://nodejs.org/en/download/
-
-
-### Git
-
-You will need to have Git installed on your machine, one quick way to do this is install GitHub Desktop.
-
-Check if you have Git installed by typing `git --version` in your terminal. If you get an error, download it here: https://desktop.github.com/
-
-
-### GitHub Account
-
-https://github.com/join
-
-Sign up for a GitHub account. If you want to clone the code locally and push changes, you'll 
-need to [generate](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) an SSH key 
-and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) it to GitHub.
-
-
-## Break Into Teams
-
-Get into 10 teams of 2-3 (we can only have up to 10 teams because of limitations with the number of bots on our Slack team).
-
-When you are in groups, pick your team name and create a public Slack channel (not private). Invite Avi, Cole, and everyone on the team using the
-`/invite` command. 
-
-Once you have your team channel set up, Avi and Cole will give you a Slack API token.
-
-## Set Up The Project
-
-We will be pair programming during this workshop. One 
-
-### Fork this repo
-
-Click the "Fork" button in the upper right hand corner. This will give you your own copy of this example repo to work with.
-You won't be able to make changes to this repo, so you will need to fork it.
-
-You will be using one repo for your team so add everyone on your team as a "collaborator". You can do that at `https://github.com/<GHUsername>/pizza-bot/settings/collaboration`.
-
-### Clone Your Forked Version
-
-Make a local copy of your version using the `git clone` command. Use the "Clone or Download" button to get the URL to your copy of the project.
-
-### Create a .env File
-
-A create a file named `.env` in the root of your project. Add this line to the file:
-
-```bash
-export SLACK_TOKEN=replace_me
+If you want to test your regular expression, type `node` in your terminal. That will open the Node "REPL", an interactive terminal
+that lets you run javascript code. You can do something like:
+```js
+var regex = /my regex/
+regex.test('my string')
 ```
 
-When we give you a Slack API token that you can use to replace `replace_me`.
+If that `regex.test` command prints out `true`, your regex matches.
 
-Once you have your token, open a terminal and type
+## Next Exercise
 
-```bash
-source .env
-```
+Great job! You've made your first Skellington plugin. Plugins are a great way to isolate related bot interactions.
 
-This will expose the variables in your `.env` file to the current terminal session. **You will need to 
-type `source .env` for each new terminal window you open.** If you see this error `Missing configuration. Config must 
-include either slackToken AND/OR clientId, clientSecret, and port` you forgot to type `source .env` :smile:
+This one isn't so useful yet, in the next step we're going to start improving this plugin in the next exercise.
 
-## Start Your Bot
-
-This project uses `npm` scripts to perform tasks. You can find them in the `package.json` file. 
-Type `npm start` in a terminal window to start your bot. Find your bot in Slack and it should have a green active icon next to it. If you don't see that
-check your terminal for logs (did you remember to `source .env`?).
-
-In Slack type `hello bot` and see if it responds. You can also type `@<botname> help` to see what help commands it has.
-
-
-## Next Task
-
-Once you have your bot running, it's time to dig in! Take a look at the README in this branch for the next exercise: 
-https://github.com/SparkPost/pizza-bot/tree/01-stores
+https://github.com/SparkPost/pizza-bot/tree/02-stores
