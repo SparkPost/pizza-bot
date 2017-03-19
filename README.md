@@ -9,9 +9,9 @@ we find. This involves asking the user a question and waiting for a response. We
 Reuse everything you can from the last exercise. For instance: keep those methods to get stores and format addresses. They'll come in handy!
 
 
-Last Exercise: https://github.com/SparkPost/pizza-bot/tree/01-stores
+Last Exercise: https://github.com/SparkPost/pizza-bot/tree/02-stores
 
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/03-menu
+Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-menu
 
 ## Conversations
 
@@ -100,5 +100,5 @@ Great Job! You now can start a conversation with a user, ask a them a question, 
 You can even store information for later. These are all super important concepts in bot-building! 
 Now things are going to get interesting!
 
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/03-menu
+Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-menu
 
