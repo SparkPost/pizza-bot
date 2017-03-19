@@ -1,102 +1,81 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Task 3: Get a Real Address
-* When your bot hears "I want a pizza" aske the user the which address they want their pizza delivered to
-* Print any nearby restaurants. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
-* Store the address you get from the user and your list of stores in the conversation state. (See the section below about Variables in Conversations).
+## Task 4: Choose a Store
+* After your bot lists all the stores near the user's address, ask them to pick a store by ID.
+* Get the Store info from the `pizzapi`. 
+* If that request fails, give the user an error message and ask for their store again.
+If the request succeeds, set the result that comes back from the `pizzapi` library as a variable on the conversation.
 
 ## Concepts
 
-### Conversations
+### Docs Aren't the Truth
 
-This task requires some back and forth with the user. We need to ask them questions and respond to their responses. 
-We can do this with [conversations](https://github.com/howdyai/botkit#control-conversation-flow).
-
-### Creating a Conversation
-
-To start a conversation, you will need to call `bot.createConversation(message, cb)`. `cb` is a Node-style callback
-that takes an error as the first parameter and a `conversation` object as the second parameter. Fun fact: this method is 
-synchronous and cannot respond with an error!
-
-There are a few methods you'll want to use:
-
-[convo.addMessage(textOrObject, thread_name)](https://github.com/howdyai/botkit#convoaddmessage)
-[convo.addQuestion(text, callback, options, thread_name)](https://github.com/howdyai/botkit#convoaddquestion)
-[convo.setVar(key, value)](https://github.com/howdyai/botkit#convosetvar)
-[convo.gotoThread(thread_name)](https://github.com/howdyai/botkit#convogotothread)
-[convo.activate()](https://github.com/howdyai/botkit#conversationactivate)
-
-
-Your flow will go something like this:
-```js
-controller.hears(/i want a pizza/i, ['ambient'], (bot, message) => bot.createConversation(message, setUpConvo))
-
-function setUpConvo(err, convo) {
-  
-  convo.addMessage('some text', 'thread_1')
-  convo.addQuestion('a question', (responseObj) => { ... convo.gotoThread('thread_3') }, {}, 'thread_2')
-  convo.addMessage('another message', 'thread_3')
-  
-  convo.activate()
-  convo.gotoThread('thread_1')
-}
-
-```
-
-The conversation will automatically end when you have no more messages queued up in your flow.
-
-### Conversation Flow
-
-Each message and question is associated with a "thread." You can think of a thread as one interaction in your conversation.
-We use threads to keep our conversation callbacks flat (no pyramid of doom!). You can also repeat/reuse parts of your conversations
-the same path very easily with threads. This is very handy for error handling.
-
-You can use `convo.gotoThread` to jump to different different threads. This will come in handy in `convo.addQuestion`.
-
-`convo.addMessage` doesn't take a callback, so to move to another thread, you will need to specify an "action" like so:
+Uh-oh... the docs say this is how you should get Store info:
 
 ```js
-convo.addMessage({
-  text: 'This is the message text for the user',
-  action: 'next_thread'
-}, 'this_thread')
+const myStore = new pizzapi.Store()
+myStore.ID = userChoseId
+
+myStore.getInfo((storeData) => console.log(storeData))
 ```
 
-### Variables in Conversations
+It turns out that throws this error:
+```bash
+/Users/cfurfarostrode/src/projects/pizza-bot/node_modules/pizzapi/src/Store.js:7
+    this.ID = parameters.ID;
+                        ^
+```
 
-You can set variables on a conversation and retrieve them later. Use the `conversation.setVar(key, value)` method to set variables.
-You can access the values programmatically with `conversation.vars.key`. If you need access those values inside a 
-conversation response, you can use [mustache syntax](https://github.com/janl/mustache.js/#templates). The `conversation.vars` 
-will be exposed as `vars` in the template: `Here is your address: {{ vars.address }}`.
+If you do this the error goes away:
+```js
+const myStore = new pizzapi.Store({ID: userChoseId})
+```
 
-**HINT:** You should set the `address` the user types in and any `stores` you find as variables on your conversation.
+How did we figure that out? I looked at the source code :scream_cat:. This is the great thing
+about open source software: you can always go read the source. Docs are great, but even for (especially for?) paid, closed-sourced
+software, the docs can be wrong. Docs are great, and you should always start there. But once they stop making sense or seem
+to contradict what you see, take a peek at the code. Code is always the source of truth.
+
+So how do you find the source? You can look locally at your `node_modules` directory and find the `pizzapi` directory.
+We looked around in there until we found a file named `Store.js`, which, surprise surpise, had the constructor for the Store object.
+It looks like this:
+
+```js
+var Store = function(parameters) {
+    this.ID = parameters.ID;
+};
+```
+
+It turns out `parameters` is required, and it looks like it must be an object with one (optional) key `ID`.
+
+You could also look this up on Github. Using your local copy is nice mainly because that is the version you are using,
+so you can be sure that is the code that will be run.
+
+In short, docs are good, but learn how to read source code. That's always going to be your, ahem, *source* of truth.
 
 
 ## Helpful Hints
 
-Reuse everything you can from the last exercise. For instance: keep those methods to get stores and format addresses. They'll come in handy!
-
-### Looping Over Arrays In Messages With Mustache
-
-Let's say you have an array of store addresses and you added that as a variable named `stores` to your conversation. 
-To print each store address on it's own line, you could do something like this:
+Use the `action` property of `conversation.addMessage` to jump to another thread:
 
 ```js
-  convo.addMessage(`Here are some nearby pizza stores: {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`, `list-stores`)
+conversation.addMessage({
+  text: `some text`,
+  action: `next_thread`
+})
 ```
 
-`{{#vars.stores}} ... {{/vars.stores}}` is mustache syntax to iterate over each entry in the `stores` array.
-That `\r\n` will be interpreted by Slack as a new line character
-`{{.}}` is mustache syntax to print the current entry in the `stores` array. This works if `stores` is an array of Strings.
-If we had an array of objects, you could use the property name in the mustache template, something like `{{address}}`.
-
+In the examples, we're making a method for each set of conversation interactions. These methods
+have names like `setUpAddressConvo` and `setUpStoresConvo`. That helps keep our interactions grouped
+together and keep things organized (if you remember that from the first exercise, give yourself a :star2:!).
 
 ## Next Exercise
 
-Great Job! You now can start a conversation with a user, ask a them a question, and respond based on what they say. 
-You can even store information for later. These are all super important concepts in bot-building! 
-Now things are going to get interesting!
+Woohoo! We have a bot that can ask for an address, find a "restaurant", and let the user pick where they want pizza from!
+And we learned a valuable lesson about the pitfalls of documentation.
 
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-menu
+In the next exercise, we're going to go one step further and take a look at the menu! Mmmm! I can almost taste that delicious "pizza"!
+
+Next Exercise: https://github.com/SparkPost/pizza-bot/tree/05-menu
 

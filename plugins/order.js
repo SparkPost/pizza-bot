@@ -23,6 +23,7 @@ function startPizzaConvo (err, convo) {
 
   setUpAddressConvo(convo)
   setUpStoresConvo(convo)
+  setUpMenuConvo(convo)
 
   convo.activate()
   convo.gotoThread(`address`)
@@ -68,7 +69,40 @@ function setUpAddressConvo (convo) {
  * @param convo
  */
 function setUpStoresConvo(convo) {
-  convo.addMessage(`Here are some nearby pizza stores for you... {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`, `list-stores`)
+  convo.addMessage({
+    text: `Here are some nearby pizza stores for you... {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`,
+    action: `pick-store`
+  }, `list-stores`)
+
+  convo.addMessage({
+    text: `I couldn't find a store with ID {{ vars.storeId }}. Double check that ID with the list above.`,
+    action: `pick-store`
+  }, `store-dne`)
+
+  convo.addQuestion(`Which store ID would you like to order from?`, (response) => {
+    const storeId = parseInt(response.text, 10)
+    convo.setVar(`storeId`, storeId)
+
+    const myStore = new pizzapi.Store({ID: storeId});
+
+    myStore.getInfo((storeData) => {
+      if (!storeData.success) {
+        convo.gotoThread(`store-dne`)
+        return
+      }
+
+      convo.setVar(storeData.result)
+      convo.gotoThread(`list-menu`)
+    });
+  }, {}, `pick-store`)
+}
+
+/**
+ * All menu interactions go here
+ * @param convo
+ */
+function setUpMenuConvo(convo) {
+  convo.addMessage(`Here's what they have to offer:`, `list-menu`)
 }
 
 /**
