@@ -1,7 +1,7 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Task 3: Get a Real Address
+## Exercise 3: Get a Real Address
 * When your bot hears "I want a pizza" aske the user the which address they want their pizza delivered to
 * Print any nearby restaurants. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
 * Store the address you get from the user and your list of stores in the conversation state. (See the section below about Variables in Conversations).
