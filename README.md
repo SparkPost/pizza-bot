@@ -1,19 +1,14 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Task 2: Get a Real Address
+## Task 3: Get a Real Address
+* When your bot hears "I want a pizza" aske the user the which address they want their pizza delivered to
+* Print any nearby restaurants. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
+* Store the address you get from the user and your list of stores in the conversation state. (See the section below about Variables in Conversations).
 
-For this task, we're going to ask the which address they want their pizza delivered too and print any nearby restaurants
-we find. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
+## Concepts
 
-Reuse everything you can from the last exercise. For instance: keep those methods to get stores and format addresses. They'll come in handy!
-
-
-Last Exercise: https://github.com/SparkPost/pizza-bot/tree/02-stores
-
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-menu
-
-## Conversations
+### Conversations
 
 This task requires some back and forth with the user. We need to ask them questions and respond to their responses. 
 We can do this with [conversations](https://github.com/howdyai/botkit#control-conversation-flow).
@@ -34,7 +29,6 @@ There are a few methods you'll want to use:
 
 
 Your flow will go something like this:
-
 ```js
 controller.hears(/i want a pizza/i, ['ambient'], (bot, message) => bot.createConversation(message, setUpConvo))
 
@@ -51,7 +45,6 @@ function setUpConvo(err, convo) {
 ```
 
 The conversation will automatically end when you have no more messages queued up in your flow.
-
 
 ### Conversation Flow
 
@@ -79,7 +72,12 @@ will be exposed as `vars` in the template: `Here is your address: {{ vars.addres
 
 **HINT:** You should set the `address` the user types in and any `stores` you find as variables on your conversation.
 
-### Looping Over Arrays With Mustache
+
+## Helpful Hints
+
+Reuse everything you can from the last exercise. For instance: keep those methods to get stores and format addresses. They'll come in handy!
+
+### Looping Over Arrays In Messages With Mustache
 
 Let's say you have an array of store addresses and you added that as a variable named `stores` to your conversation. 
 To print each store address on it's own line, you could do something like this:
