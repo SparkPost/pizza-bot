@@ -6,6 +6,13 @@ Order :pizza: From Slack
 * Print any nearby restaurants. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
 * Store the address you get from the user and your list of stores in the conversation state. (See the section below about Variables in Conversations).
 
+## Resources
+
+* [Botkit docs and source](https://github.com/howdyai/botkit)
+* [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
+* [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
+* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+
 ## Concepts
 
 ### Conversations
@@ -98,5 +105,5 @@ Great Job! You now can start a conversation with a user, ask a them a question, 
 You can even store information for later. These are all super important concepts in bot-building! 
 Now things are going to get interesting!
 
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-menu
+Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-store
 
