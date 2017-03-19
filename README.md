@@ -1,7 +1,7 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Exercise 1
+## Exercise 1: Add a New Plugin
 
 * Add a new plugin to the plugins directory named `order.js`.
 * Have the plugin listen to `direct_message` and `direct_mention` events for the phrase "I want a pizza". 
