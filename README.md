@@ -1,7 +1,7 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Task 4: Choose a Store
+## Exercise 4: Choose a Store
 * After your bot lists all the stores near the user's address, ask them to pick a store by ID.
 * Get the Store info from the `pizzapi`. 
 * If that request fails, give the user an error message and ask for their store again.
