@@ -8,6 +8,13 @@ Order :pizza: From Slack
 * The plugin should respond telling the user it is looking for nearby stores (you don't have to find them yet, we'll do that next).
 * The plugin should have some help text.
 
+## Resources
+
+* [Botkit docs and source](https://github.com/howdyai/botkit)
+* [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
+* [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
+* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+
 ## Concepts
 
 ### Skellington Plugins
