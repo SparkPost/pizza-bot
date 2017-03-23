@@ -1,5 +1,5 @@
 # pizza-bot
-Order 🍕 From Slack
+Learn how to order 🍕 From Slack
 
 ## Exercise 2: List Nearby Stores
 * When your bot hears "I want a pizza", list stores close to this hard-coded address: `11 Times Square, New York, NY 10036` (we will make this dynamic in the next exercise). Use the `pizzapi` library to do this.
