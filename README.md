@@ -1,5 +1,5 @@
 # pizza-bot
-Order :pizza: From Slack
+Learn how to order 🍕 From Slack
 
 ## Exercise 3: Get a Real Address
 * When your bot hears "I want a pizza" aske the user the which address they want their pizza delivered to
