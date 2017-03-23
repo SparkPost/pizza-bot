@@ -1,5 +1,5 @@
 # pizza-bot
-Order :pizza: From Slack
+Learn how to order :pizza: From Slack
 
 ## Exercise 1: Add a New Plugin
 
@@ -7,6 +7,7 @@ Order :pizza: From Slack
 * Have the plugin listen to `direct_message` and `direct_mention` events for the phrase "I want a pizza". 
 * The plugin should respond telling the user it is looking for nearby stores (you don't have to find them yet, we'll do that next).
 * The plugin should have some help text.
+* Run `npm test` and fix all problems that you find.
 
 ## Resources
 
@@ -38,6 +39,19 @@ There are 4 event types:
 The callback function takes a `bot` and `message` object. The `bot` is a reference to the bot that heard the message, and the
 message provides some details about which user said what text in which channel. You can `console.log` out the messages to see 
 what they contain.
+
+### Code Linting
+
+When you run `npm test`, you are running the [standard]() code-linting utility on your project. Linting means checking your code for style and consistency. Standard uses eslint under the hood and can do some nifty things, like fix common errors.
+
+Enforcing a common style helps in a few ways:
+* it makes the codebase easier to read because it is consistent
+* it protects against common errors (using undeclared variables, for example)
+* it prevents arguments about style (seriously... save your energy :smile:)
+
+The important thing is consitency: you don't have to agree with the style, but it is important to be consistent with the style in a project. That is a kindness to everyone who works on the project (and your future self!).
+
+You might notice that all of your semi-colons are gone. [That's okay!](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding). 
 
 ## Helpful Hints
 
