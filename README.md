@@ -5,6 +5,7 @@ Order :pizza: From Slack
 * When your bot hears "I want a pizza" aske the user the which address they want their pizza delivered to
 * Print any nearby restaurants. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
 * Store the address you get from the user and your list of stores in the conversation state. (See the section below about Variables in Conversations).
+* Run `npm test` and fix all problems that you find.
 
 ## Resources
 
@@ -17,7 +18,7 @@ Order :pizza: From Slack
 
 ### Conversations
 
-This task requires some back and forth with the user. We need to ask them questions and respond to their responses. 
+This task requires some back and forth with the user. We need to ask them questions and respond to their answers. 
 We can do this with [conversations](https://github.com/howdyai/botkit#control-conversation-flow).
 
 ### Creating a Conversation
@@ -28,11 +29,11 @@ synchronous and cannot respond with an error!
 
 There are a few methods you'll want to use:
 
-[convo.addMessage(textOrObject, thread_name)](https://github.com/howdyai/botkit#convoaddmessage)
-[convo.addQuestion(text, callback, options, thread_name)](https://github.com/howdyai/botkit#convoaddquestion)
-[convo.setVar(key, value)](https://github.com/howdyai/botkit#convosetvar)
-[convo.gotoThread(thread_name)](https://github.com/howdyai/botkit#convogotothread)
-[convo.activate()](https://github.com/howdyai/botkit#conversationactivate)
+* [convo.addMessage(textOrObject, thread_name)](https://github.com/howdyai/botkit#convoaddmessage)
+* [convo.addQuestion(text, callback, options, thread_name)](https://github.com/howdyai/botkit#convoaddquestion)
+* [convo.setVar(key, value)](https://github.com/howdyai/botkit#convosetvar)
+* [convo.gotoThread(thread_name)](https://github.com/howdyai/botkit#convogotothread)
+* [convo.activate()](https://github.com/howdyai/botkit#conversationactivate)
 
 
 Your flow will go something like this:
@@ -56,7 +57,7 @@ The conversation will automatically end when you have no more messages queued up
 ### Conversation Flow
 
 Each message and question is associated with a "thread." You can think of a thread as one interaction in your conversation.
-We use threads to keep our conversation callbacks flat (no pyramid of doom!). You can also repeat/reuse parts of your conversations
+We use threads to keep our conversation callbacks flat (no [pyramid of doom!](http://callbackhell.com/)). You can also repeat/reuse parts of your conversations
 the same path very easily with threads. This is very handy for error handling.
 
 You can use `convo.gotoThread` to jump to different different threads. This will come in handy in `convo.addQuestion`.
