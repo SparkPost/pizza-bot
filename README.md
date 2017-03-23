@@ -1,5 +1,5 @@
 # pizza-bot
-Order :pizza: From Slack
+Learn how to order :pizza: From Slack
 
 ## Welcome Pizza Botter
 
@@ -7,13 +7,11 @@ Howdy :wave: We're going to build a bot today. An awesome bot that will order yo
 From Dominos. So, hot pizza. Well, maybe hot, but definitely at least warm pizza. From Dominos.
 OK, let's not get hung up on the definitions of "pizza" or "food". The bot will be awesome, I promise. 
 
-And when you're done you'll get a feel for how to take an idea and make it real!
+Whether or not you want to actually _eat_ Domino's "pizza", this project will show us how to take a fun idea (a Slack bot that delivers pizza), break it down in to small and manageable steps, and work with real-life (sometimes messy) external libraries to make your idea become a real thing. 
 
-Before we begin, let's do a little set up.
- 
+Before we begin, let's do a little set up. 
 
 ## Things You Need Before We Start
-
 
 ### Node
 
@@ -22,13 +20,11 @@ If you have an older version, check out [nvm](https://github.com/creationix/nvm)
 
 Check if you have Node installed by typing `node --version` in your terminal. If you get an error, download it here: https://nodejs.org/en/download/
 
-
 ### Git
 
 You will need to have Git installed on your machine, one quick way to do this is install GitHub Desktop.
 
 Check if you have Git installed by typing `git --version` in your terminal. If you get an error, download it here: https://desktop.github.com/
-
 
 ### GitHub Account
 
@@ -43,19 +39,17 @@ and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-githu
 
 Get into 10 teams of 2-3 (we can only have up to 10 teams because of limitations with the number of bots on our Slack team).
 
-When you are in groups, pick your team name and create a public Slack channel (not private). Invite Avi, Cole, and everyone on the team using the
-`/invite` command. 
+When you are in groups, pick your team name and create a public Slack channel (not private). Invite Avi, Cole, and everyone on the team using the `/invite` command. 
 
-Once you have your team channel set up, Avi and Cole will give you a Slack API token.
+Once you have your team channel set up, DM your team name to Avi or Cole, and one of them will give you a Slack API token.
 
 ## Set Up The Project
 
-We will be pair programming during this workshop. One 
+We will be pair programming during this workshop. One person on the team should fork the repo (see below), everyone on the team can clone that copy to their machines and follow the set up steps below.
 
 ### Fork this repo
 
-Click the "Fork" button in the upper right hand corner. This will give you your own copy of this example repo to work with.
-You won't be able to make changes to this repo, so you will need to fork it.
+Have one person click the "Fork" button in the upper right hand corner of this repo. This will give you your own copy of this example repo to work with. You won't be able to make changes to this repo, so you will need to fork it.
 
 You will be using one repo for your team so add everyone on your team as a "collaborator". You can do that at `https://github.com/<GHUsername>/pizza-bot/settings/collaboration`.
 
@@ -71,9 +65,9 @@ A create a file named `.env` in the root of your project. Add this line to the f
 export SLACK_TOKEN=replace_me
 ```
 
-When we give you a Slack API token that you can use to replace `replace_me`.
+When we give you a Slack API token, replace `replace_me` with the token.
 
-Once you have your token, open a terminal and type
+Once you have your token, open a terminal and type:
 
 ```bash
 source .env
@@ -95,9 +89,9 @@ Type `npm start` in a terminal window to start your bot. Find your bot in Slack 
 
 In Slack type `hello bot` and see if it responds. You can also type `@<botname> help` to see what help commands it has.
 
-Your bot will restart on every code change. This is a great feature for development, not so useful in production :smile:
+Heads up: your bot will restart on every code change. This is a great feature for development, not so useful in production :smile:
 
-## Next Task
+## First Exercise
 
-Once you have your bot running, it's time to dig in! Take a look at the README in this branch for the next exercise: 
-https://github.com/SparkPost/pizza-bot/tree/01-stores
+Once you have your bot running, it's time to dig in! Take a look at the README in this branch for the first exercise: 
+https://github.com/SparkPost/pizza-bot/tree/01-plugin
