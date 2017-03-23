@@ -89,6 +89,6 @@ Use `\r\n` to make a new line in Slack.
 
 ## Next Exercise
 
-Congratulations! Now you are able to find stores near an address usine the `pizzapi` external library! Next we'll make this even more usefyl by asking a user for their real address.
+Congratulations! Now you are able to find stores near an address usine the `pizzapi` external library! And you learned to use `console.log` to print out responses to learn about an API. Next we'll make this even more useful by asking a user for their real address.
 
 Next exercise: https://github.com/SparkPost/pizza-bot/tree/03-address
