@@ -42,7 +42,7 @@ what they contain.
 
 ### Code Linting
 
-When you run `npm test`, you are running the [standard]() code-linting utility on your project. Linting means checking your code for style and consistency. Standard uses eslint under the hood and can do some nifty things, like fix common errors.
+When you run `npm test`, you are running the [standard](https://github.com/feross/standard) code-linting utility on your project. Linting means checking your code for style and consistency. Standard uses eslint under the hood and can do some nifty things, like fix common errors.
 
 Enforcing a common style helps in a few ways:
 * it makes the codebase easier to read because it is consistent
