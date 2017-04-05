@@ -1,11 +1,69 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Exercise 4: Choose a Store
-* After your bot lists all the stores near the user's address, ask them to pick a store by ID.
-* Get the Store info from the `pizzapi`. 
-* If that request fails, give the user an error message and ask for their store again.
-If the request succeeds, set the result that comes back from the `pizzapi` library as a variable on the conversation.
+## Exercise 5: Convert your Bot to an App
+
+OK... this exercise is going to be pretty straightforward code-wise, but a little more heavy on the concept side. You can always circle back to the ideas later
+
+### Install ngrok
+
+`npm install -g ngrok`
+
+### Run ngrok
+
+Open a new terminal window and enter this command:
+```bash
+ngrok http 3000
+```
+
+You will see the ngrok window. You should see two values for `Forwarding`, copy the `https` version and share it with Avi and Cole in Slack. They will use it to configure your app with Slack.
+
+**NOTE**: Don't restart ngrok or you will get a new URL. If you do restart ngrok, just pass the new URL to Avi and Cole and they'll update your
+app's configuration with Slack.
+
+
+### Get Your Credentials and Update Your `.env` File
+
+Avi and Cole will give you three things: a `CLIENT_ID`, a `CLIENT_SECRET`, and a activation URL.
+
+Add the following to your `.env` file (remember: this is the file that holds your environment-specific variables, like API keys):
+
+```bash
+export PORT=3000
+export CLIENT_ID=<CLIENT_ID>
+export CLIENT_SECRET=<CLIENT_SECRET>
+```
+
+**NOTE**: Don't forget to stop your bot and type `source .env` to set the new environment variables in your terminal session.
+
+### Update `index.js`
+
+You'll need to update your Skellington configurations to use the new Client ID/Client Secret pair. Your config should look like this at the end:
+
+```js
+'use strict'
+
+require('skellington')({
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+  port: process.env.PORT,
+  scopes: ['bot'],
+  plugins: [require('./plugins/welcome'), require('./plugins/order')],
+  botkit: {
+    interactive_replies: true,
+    json_file_store: './db/'
+  }
+})
+```
+
+* Remove `slackToken`:
+* Add `clientId: process.env.CLIENT_ID`: Your CLIENT_ID from Slack.
+* Add `clientSecret: process.env.CLIENT_SECRET`: Your CLIENT_SECRET from Slack.
+* Add `port: process.env.PORT`: The port your local server will listen on.
+* Add `scopes: ['bot']`: These are the OAuth scopes your app will use.
+* Add `bokit: {}`: These configs will be passed directly to the Botkit library.
+* Add `bokit.interactive_replies: true`: This setting will let us use Slack message buttons in our app.
+* Add `bokit.json_file_store: './db/'`: Botkit will store some things behind the scenes, this sets up a small JSON file store. Don't worry too much about what goes into it, we won't be using it that much for this project.
 
 ## Resources
 
@@ -14,75 +72,36 @@ If the request succeeds, set the result that comes back from the `pizzapi` libra
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
 * [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
 
+
 ## Concepts
 
-### Docs Aren't the Truth
+### Bots vs. Apps
 
-Uh-oh... the [docs](http://riaevangelist.github.io/node-dominos-pizza-api/) say this is how you should get Store info:
 
-```js
-const myStore = new pizzapi.Store()
-myStore.ID = userChoseId
+### Local Tunneling
 
-myStore.getInfo((storeData) => console.log(storeData))
-```
+Don't worry too much about how this works, but tools like `ngrok` and `localtunnel` will let you access endpoints on your
+local server from anywhere on the Internet. These tools will give you a URL
 
-It turns out that throws this error:
-```bash
-/Users/cfurfarostrode/src/projects/pizza-bot/node_modules/pizzapi/src/Store.js:7
-    this.ID = parameters.ID;
-                        ^
-```
+This is useful because Slack will need to send HTTP requests to the Slack App running on your machine.
 
-If you do this the error goes away:
-```js
-const myStore = new pizzapi.Store({ID: userChoseId})
-```
+In our experience, `ngrok` has been easier to work with than `localtunnel`, so we will be using that for the duration of the workshop.
 
-How did we figure that out? I looked at the source code :scream_cat:. This is the great thing
-about open source software: you can always go read the source. Docs are great, but even for (especially for?) paid, closed-sourced
-software, the docs can be wrong. Docs are great, and you should always start there. But once they stop making sense or seem
-to contradict what you see, take a peek at the code. Code is always the source of truth.
 
-So how do you find the source? You can look locally at your `node_modules` directory and find the `pizzapi` directory.
-We looked around in there until we found a file named `Store.js`, which, surprise surpise, had the constructor for the Store object.
-It looks like this:
 
-```js
-var Store = function(parameters) {
-    this.ID = parameters.ID;
-};
-```
+### Botkit Storage
 
-It turns out `parameters` is required, and it looks like it must be an object with one (optional) key `ID`.
-
-You could also look this up on Github. Using your local copy is nice mainly because that is the version you are using,
-so you can be sure that is the code that will be run.
-
-In short, docs are good, but learn how to read source code. That's always going to be your, ahem, *source* of truth.
 
 
 ## Helpful Hints
 
-Use the `action` property of `conversation.addMessage` to jump to another thread:
-
-```js
-conversation.addMessage({
-  text: `some text`,
-  action: `next_thread`
-})
-```
-
-In the examples, we're making a method for each set of conversation interactions. These methods
-have names like `setUpAddressConvo` and `setUpStoresConvo`. That helps keep our interactions grouped
-together and keep things organized (if you remember that from the first exercise, give yourself a :star2:!).
+### Making a Slack App
 
 ## Next Exercise
 
-Woohoo! We have a bot that can ask for an address, find a "restaurant", and let the user pick where they want pizza from!
-And we learned a valuable lesson about the pitfalls of documentation.
+Alright! Detour over! Now back to our regularly scheduled program!
 
-In the next exercise, we're going to go one step further and take a look at the menu! Mmmm! I can almost taste that delicious "pizza"!
+In the next exercise, we're going to use some message buttons to get an order together! Mmmm! I can almost taste that delicious "pizza"!
 
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/05-menu
+Next Exercise: https://github.com/SparkPost/pizza-bot/tree/06-message-buttons
 
