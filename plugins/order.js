@@ -1,4 +1,4 @@
-const pizzapi = require(`pizzapi`)
+const pizzapi = require(`dominos`)
 const logger = require(`skellington-logger`)(`order`)
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
   },
   help: {
     command: `pizza`,
-    text: `Say "I want a pizza" and I'll help you find something like that near you`
+    text: `Say 'I want a pizza' and I'll help you find something like that near you`
   }
 }
 
@@ -68,7 +68,7 @@ function setUpAddressConvo (convo) {
  * Conversation messages relating to printing and choosing stores
  * @param convo
  */
-function setUpStoresConvo(convo) {
+function setUpStoresConvo (convo) {
   convo.addMessage({
     text: `Here are some nearby pizza stores for you... {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`,
     action: `pick-store`
@@ -83,7 +83,7 @@ function setUpStoresConvo(convo) {
     const storeId = parseInt(response.text, 10)
     convo.setVar(`storeId`, storeId)
 
-    const myStore = new pizzapi.Store({ID: storeId});
+    const myStore = new pizzapi.Store({ID: storeId})
 
     myStore.getInfo((storeData) => {
       if (!storeData.success) {
@@ -93,7 +93,7 @@ function setUpStoresConvo(convo) {
 
       convo.setVar(storeData.result)
       convo.gotoThread(`list-menu`)
-    });
+    })
   }, {}, `pick-store`)
 }
 
@@ -101,8 +101,49 @@ function setUpStoresConvo(convo) {
  * All menu interactions go here
  * @param convo
  */
-function setUpMenuConvo(convo) {
-  convo.addMessage(`Here's what they have to offer:`, `list-menu`)
+function setUpMenuConvo (convo) {
+
+  convo.addQuestion({
+    attachments: [{
+      title: 'What kind of pizza would you like?',
+      callback_id: 'pizza_choice',
+      attachment_type: 'default',
+      actions: [{
+        name: 'cheese',
+        style: 'primary',
+        text: ':cheese_wedge: Cheese',
+        value: 'C',
+        type: 'button'
+      }, {
+        name: 'pepperoni',
+        style: 'danger',
+        text: ':pizza: Pepperoni',
+        value: 'P',
+        type: 'button'
+      }]
+    }]
+  }, pizzaCallback, {}, `list-menu`)
+
+  convo.addMessage({
+    text: `Yum! One {{ vars.pizzaType }} pizza coming up!`
+  }, `menu-choice`)
+
+  function pizzaCallback (response) {
+    if (response.callback_id === 'pizza_choice') {
+      const pizzaType = response.actions[0].name
+
+      const pizzaItem = new pizzapi.Item({
+        code: `S_PIZZA`,
+        quantity: 1,
+        options: [response.text]
+      })
+
+      convo.setVar('pizzaType', pizzaType)
+      convo.setVar('pizzaItem', pizzaItem)
+
+      convo.gotoThread(`menu-choice`)
+    }
+  }
 }
 
 /**
