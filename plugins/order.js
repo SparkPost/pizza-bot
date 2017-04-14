@@ -1,4 +1,4 @@
-const pizzapi = require(`pizzapi`)
+const pizzapi = require(`dominos`)
 const logger = require(`skellington-logger`)(`order`)
 
 module.exports = {
@@ -68,7 +68,7 @@ function setUpAddressConvo (convo) {
  * Conversation messages relating to printing and choosing stores
  * @param convo
  */
-function setUpStoresConvo(convo) {
+function setUpStoresConvo (convo) {
   convo.addMessage({
     text: `Here are some nearby pizza stores for you... {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`,
     action: `pick-store`
@@ -83,7 +83,7 @@ function setUpStoresConvo(convo) {
     const storeId = parseInt(response.text, 10)
     convo.setVar(`storeId`, storeId)
 
-    const myStore = new pizzapi.Store({ID: storeId});
+    const myStore = new pizzapi.Store({ID: storeId})
 
     myStore.getInfo((storeData) => {
       if (!storeData.success) {
@@ -93,7 +93,7 @@ function setUpStoresConvo(convo) {
 
       convo.setVar(storeData.result)
       convo.gotoThread(`list-menu`)
-    });
+    })
   }, {}, `pick-store`)
 }
 
@@ -101,7 +101,7 @@ function setUpStoresConvo(convo) {
  * All menu interactions go here
  * @param convo
  */
-function setUpMenuConvo(convo) {
+function setUpMenuConvo (convo) {
   convo.addMessage(`Here's what they have to offer:`, `list-menu`)
 }
 
