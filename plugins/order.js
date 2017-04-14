@@ -67,7 +67,7 @@ function setUpAddressConvo (convo) {
  * Conversation messages relating to printing and choosing stores
  * @param convo
  */
-function setUpStoresConvo(convo) {
+function setUpStoresConvo (convo) {
   convo.addMessage(`Here are some nearby pizza stores for you... {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`, `list-stores`)
 }
 
