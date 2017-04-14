@@ -24,6 +24,7 @@ function startPizzaConvo (err, convo) {
   setUpAddressConvo(convo)
   setUpStoresConvo(convo)
   setUpMenuConvo(convo)
+  setUpConfirmationConversation(convo)
 
   convo.activate()
   convo.gotoThread(`address`)
@@ -102,7 +103,6 @@ function setUpStoresConvo (convo) {
  * @param convo
  */
 function setUpMenuConvo (convo) {
-
   convo.addQuestion({
     attachments: [{
       title: 'What kind of pizza would you like?',
@@ -124,10 +124,6 @@ function setUpMenuConvo (convo) {
     }]
   }, pizzaCallback, {}, `list-menu`)
 
-  convo.addMessage({
-    text: `Yum! One {{ vars.pizzaType }} pizza coming up!`
-  }, `menu-choice`)
-
   function pizzaCallback (response) {
     if (response.callback_id === 'pizza_choice') {
       const pizzaType = response.actions[0].name
@@ -141,8 +137,69 @@ function setUpMenuConvo (convo) {
       convo.setVar('pizzaType', pizzaType)
       convo.setVar('pizzaItem', pizzaItem)
 
-      convo.gotoThread(`menu-choice`)
+      convo.gotoThread(`confirm-order`)
     }
+  }
+}
+
+function setUpConfirmationConversation (convo) {
+  convo.addQuestion({
+    text: `Ok! I'm ready to order you one {{ vars.pizzaType }} pizza and have it delivered to {{ vars.address }}.`,
+    attachments: [{
+      title: 'Place order?',
+      callback_id: 'place_order',
+      attachment_type: 'default',
+      actions: [{
+        name: 'yes',
+        style: 'primary',
+        text: 'Yes Please!',
+        value: 'yes',
+        type: 'button'
+      }, {
+        name: 'no',
+        text: 'Nevermind',
+        value: 'no',
+        type: 'button'
+      }]
+    }]
+  }, confirmCallback, {}, `confirm-order`)
+
+  convo.addMessage({
+    text: `Alright! The pizza is on its way! Your order number is {{ vars.orderId }}.`
+  }, `order-placed`)
+
+  convo.addMessage({
+    text: `Sorry to hear that. Let me know if you change your mind!`
+  }, `order-declined`)
+
+  function confirmCallback (response) {
+    if (response.callback_id !== 'place_order') {
+      return
+    }
+
+    if (response.text === 'yes') {
+      return placeOrder()
+    } else {
+      convo.gotoThread('order-declined')
+    }
+  }
+
+  function placeOrder () {
+    const order = new pizzapi.Order({
+      storeID: convo.vars.storeId,
+      deliveryMethod: 'delivery',
+      customer: {
+        address: convo.vars.address
+      }
+    })
+
+    order.addItem(convo.vars.pizzaItem)
+
+    order.place((response) => {
+      convo.setVar('orderId', response.result.Order.OrderID)
+
+      convo.gotoThread('order-placed')
+    })
   }
 }
 
