@@ -3,7 +3,7 @@ Order :pizza: From Slack
 
 ## Exercise 4: Choose a Store
 * After your bot lists all the stores near the user's address, ask them to pick a store by ID.
-* Get the Store info from the `pizzapi`. 
+* Get the Store info from the `dominos`.
 * If that request fails, give the user an error message and ask for their store again.
 If the request succeeds, set the result that comes back from the `pizzapi` library as a variable on the conversation.
 
@@ -12,7 +12,7 @@ If the request succeeds, set the result that comes back from the `pizzapi` libra
 * [Botkit docs and source](https://github.com/howdyai/botkit)
 * [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
-* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+* [PizzaPI source](http://riaevangelist.github.io/node-dominos-pizza-api)
 
 ## Concepts
 
@@ -29,7 +29,7 @@ myStore.getInfo((storeData) => console.log(storeData))
 
 It turns out that throws this error:
 ```bash
-/Users/cfurfarostrode/src/projects/pizza-bot/node_modules/pizzapi/src/Store.js:7
+/Users/cfurfarostrode/src/projects/pizza-bot/node_modules/dominos/src/Store.js:7
     this.ID = parameters.ID;
                         ^
 ```
@@ -44,7 +44,7 @@ about open source software: you can always go read the source. Docs are great, b
 software, the docs can be wrong. Docs are great, and you should always start there. But once they stop making sense or seem
 to contradict what you see, take a peek at the code. Code is always the source of truth.
 
-So how do you find the source? You can look locally at your `node_modules` directory and find the `pizzapi` directory.
+So how do you find the source? You can look locally at your `node_modules` directory and find the `dominos` directory.
 We looked around in there until we found a file named `Store.js`, which, surprise surpise, had the constructor for the Store object.
 It looks like this:
 
