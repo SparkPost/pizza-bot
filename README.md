@@ -12,7 +12,7 @@ Learn how to order 🍕 From Slack
 * [Botkit docs and source](https://github.com/howdyai/botkit)
 * [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
-* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+* [PizzaPI source](http://riaevangelist.github.io/node-dominos-pizza-api)
 
 ## Concepts
 
