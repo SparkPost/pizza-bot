@@ -102,7 +102,6 @@ function setUpStoresConvo (convo) {
  * @param convo
  */
 function setUpMenuConvo (convo) {
-
   convo.addQuestion({
     attachments: [{
       title: 'What kind of pizza would you like?',
