@@ -80,7 +80,7 @@ together and keep things organized (if you remember that from the first exercise
 Woohoo! We have a bot that can ask for an address, find a "restaurant", and let the user pick where they want "pizza" from!
 And we learned a valuable lesson about the pitfalls of documentation.
 
-In the next exercise, we're going to take a break from coding to think about user experience. Then, we'll get back on board the pizza train. Mmmm! I can almost taste that delicious "pizza"!
+In the next exercise, we're going to take a break from coding to think about user experience. Then, we'll get back on board the pizza train.
 
 Next Exercise: https://github.com/SparkPost/pizza-bot/tree/05-slack-app
 
