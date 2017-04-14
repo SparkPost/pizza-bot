@@ -1,4 +1,4 @@
-const pizzapi = require('pizzapi')
+const pizzapi = require('dominos')
 const logger = require('skellington-logger')('pizza')
 
 module.exports = {
