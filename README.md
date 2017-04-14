@@ -3,7 +3,7 @@ Order :pizza: From Slack
 
 ## Exercise 5: Convert your Bot to an App
 
-This exercise is going to be pretty straightforward code-wise, but a little more heavy on the concept side. You can always circle back to the ideas later.
+This exercise is going to be pretty straightforward code-wise, but a little more heavy on the concept side. You can always circle back to the ideas later if you need to.
 
 Here's the gist: the Dominos menu is complicated and there's not much documentation on how we can use all the options it provides. So we're going to simplify the problem: we're going to give users an option of one of two pizzas, either cheese or pepperoni.
 
