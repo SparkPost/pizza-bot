@@ -12,13 +12,13 @@ Learn how to order 🍕 From Slack
 * [Botkit docs and source](https://github.com/howdyai/botkit)
 * [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
-* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+* [PizzaPI source](http://riaevangelist.github.io/node-dominos-pizza-api)
 
 ## Concepts
 
 ### Using External Libraries
 
-We're going to use a library called `pizzapi` to find out details about nearby Domino's "restaurants". Don't worry, this library can't make real orders, so you won't accidentally order 100 pizzas while you're testing :smile:. We'll talk about accepting payments in a real bot later.
+We're going to use a library called `dominos` to find out details about nearby Domino's "restaurants". Don't worry, we won't add any payment info, so you won't accidentally order 100 pizzas while you're testing :smile:.
 
 You can find the docs here: http://riaevangelist.github.io/node-dominos-pizza-api/. 
 
@@ -28,7 +28,7 @@ By focusing on getting stores near a hard-coded location, we can focus on learni
 
 ## Helpful Hints
 
-Require the `pizzapi` library at the top of the file: `const pizzapi = require('pizzapi')`. It's already in your `package.json`, so you won't need to install it.
+Require the `dominos` library at the top of the file: `const pizzapi = require('dominos')`. It's already in your `package.json`, so you won't need to install it.
 
 To get a list of stores use this method call: `pizzapi.Util.findNearbyStores('11 Times Square, New York, NY 10036', 'Delivery', (storeData) => { ... })`
 
@@ -89,6 +89,6 @@ Use `\r\n` to make a new line in Slack.
 
 ## Next Exercise
 
-Congratulations! Now you are able to find stores near an address usine the `pizzapi` external library! And you learned to use `console.log` to print out responses to learn about an API. Next we'll make this even more useful by asking a user for their real address.
+Congratulations! Now you are able to find stores near an address usine the `dominos` external library! And you learned to use `console.log` to print out responses to learn about an API. Next we'll make this even more useful by asking a user for their real address.
 
 Next exercise: https://github.com/SparkPost/pizza-bot/tree/03-address
