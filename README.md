@@ -1,13 +1,13 @@
 # pizza-bot
-Learn how to order :pizza: From Slack
+Learn how to order :pizza: from Slack
 
 ## Welcome Pizza Botter
 
 Howdy :wave: We're going to build a bot today. An awesome bot that will order you hot, delicious pizza. 
-From Dominos. So, hot pizza. Well, maybe hot, but definitely at least warm pizza. From Dominos.
+From Domino's. So, hot pizza. Well, maybe hot, but definitely at least warm pizza. From Domino's.
 OK, let's not get hung up on the definitions of "pizza" or "food". The bot will be awesome, I promise. 
 
-Whether or not you want to actually _eat_ Domino's "pizza", this project will show us how to take a fun idea (a Slack bot that delivers pizza), break it down in to small and manageable steps, and work with real-life (sometimes messy) external libraries to make your idea become a real thing. 
+Whether or not you actually want to _eat_ Domino's "pizza", this project will show us how to take a fun idea (a Slack bot that delivers pizza), break it down into small and manageable steps, and work with real-life (sometimes messy) external libraries to make your idea become a real thing. 
 
 Before we begin, let's do a little set up. 
 
@@ -15,14 +15,14 @@ Before we begin, let's do a little set up.
 
 ### Node
 
-You will need to have Node installed as well. The libraries we use require Node 4+ (the examples in this repo use the current release, Node 6). 
-If you have an older version, check out [nvm](https://github.com/creationix/nvm).
+You will need to have Node installed on your machine. The libraries we use require Node 4+ (the examples in this repo use the current release, Node 6). 
+If you have an older version, check out [nvm](https://github.com/creationix/nvm) to upgrade.
 
 Check if you have Node installed by typing `node --version` in your terminal. If you get an error, download it here: https://nodejs.org/en/download/
 
 ### Git
 
-You will need to have Git installed on your machine, one quick way to do this is install GitHub Desktop.
+You will need to have Git installed as well. One quick way to do this is to install GitHub Desktop.
 
 Check if you have Git installed by typing `git --version` in your terminal. If you get an error, download it here: https://desktop.github.com/
 
@@ -39,17 +39,17 @@ and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-githu
 
 Get into 10 teams of 2-3 (we can only have up to 10 teams because of limitations with the number of bots on our Slack team).
 
-When you are in groups, pick your team name and create a public Slack channel (not private). Invite Avi, Cole, and everyone on the team using the `/invite` command. 
+Once you are in groups, pick your team name and create a public Slack channel. Invite Avi, Cole, and everyone on your team using the `/invite` command. 
 
 Once you have your team channel set up, DM your team name to Avi or Cole, and one of them will give you a Slack API token.
 
 ## Set Up The Project
 
-We will be pair programming during this workshop. One person on the team should fork the repo (see below), everyone on the team can clone that copy to their machines and follow the set up steps below.
+We will be pair programming during this workshop. One person on the team should fork the repo (see below). Everyone else on the team can clone that copy to their machines and follow the setup steps below.
 
 ### Fork this repo
 
-Have one person click the "Fork" button in the upper right hand corner of this repo. This will give you your own copy of this example repo to work with. You won't be able to make changes to this repo, so you will need to fork it.
+You won't be able to make changes to this example repo, so you will need to fork it (make a copy of it). Have one person click the "Fork" button in the upper right hand corner of this repo. This will give you your own copy of this example repo to work with in your Github account.
 
 You will be using one repo for your team so add everyone on your team as a "collaborator". You can do that at `https://github.com/<GHUsername>/pizza-bot/settings/collaboration`.
 
@@ -59,7 +59,7 @@ Make a local copy of your version using the `git clone` command. Use the "Clone 
 
 ### Create a .env File
 
-A create a file named `.env` in the root of your project. Add this line to the file:
+Create a file named `.env` in the root of your project. Add this line to the file:
 
 ```bash
 export SLACK_TOKEN=replace_me
@@ -85,7 +85,7 @@ Use `npm install` in the root of your project to install all the project depende
 
 This project uses `npm` scripts to perform tasks. You can find them in the `package.json` file.
 
-Type `npm start` in a terminal window to start your bot. Find your bot in Slack and it should have a green active icon next to it. If you don't see that check your terminal for logs (did you remember to `source .env`?).
+Type `npm start` in a terminal window to start your bot. Find your bot in Slack and it should have a green active icon next to it. If you don't see that, check your terminal for logs (did you remember to `source .env`?).
 
 In Slack type `hello bot` and see if it responds. You can also type `@<botname> help` to see what help commands it has.
 
