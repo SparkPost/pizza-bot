@@ -19,19 +19,19 @@ Learn how to order :pizza: From Slack
 ### Skellington Plugins
 
 Plugins are a core concept of [Skellington](https://github.com/Skellington-Closet/skellington). Plugins group related 
-interactions (like everything you need to order a pizza). Each plugin can specify it's own help text. Type 
+interactions (like everything you need to order a pizza). Each plugin can specify its own help text. Type 
 `@<botname> help` into Slack to see how the help text is used.
 
 Plugins help keep your code organized and clean. Organized and clean code is a favor to your future self.
 
 ### controller.hears
 
-This interface comes from [Botkit](https://github.com/howdyai/botkit). `controller.hears` and lets you specify an array of 
+This interface comes from [Botkit](https://github.com/howdyai/botkit). `controller.hears` lets you specify an array of 
 [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) that should match
 the user input, event types, and a callback function to handle the message from the user.
  
 There are 4 event types:
- * direct_message: Fired when you direct message a bot
+ * direct_message: Fired when you direct message a bot.
  * direct_mention: Fired when your message begins with `@<botname>` in any channel the bot is in, other than direct messages.
  * mention: Fired when your message contains `@<botname>` anywhere but the first word. Works in all channels the bot is in, other than direct messages.
  * ambient: Fired for all messages in any channel the bot is in, other than direct messages.
@@ -47,7 +47,7 @@ When you run `npm test`, you are running the [standard](https://github.com/feros
 Enforcing a common style helps in a few ways:
 * it makes the codebase easier to read because it is consistent
 * it protects against common errors (using undeclared variables, for example)
-* it prevents arguments about style (seriously... save your energy :smile:)
+* it prevents arguments about style (seriously... save your energy 😊 )
 
 The important thing is consitency: you don't have to agree with the style, but it is important to be consistent with the style in a project. That is a kindness to everyone who works on the project (and your future self!).
 
@@ -76,6 +76,6 @@ If that `regex.test` command prints out `true`, your regex matches.
 
 Great job! You've made your first Skellington plugin. Plugins are a great way to isolate related bot interactions.
 
-This one isn't so useful yet, in the next step we're going to start improving this plugin in the next exercise.
+This one isn't so useful yet, but we'll start improving this plugin in the next exercise.
 
 Next exercise: https://github.com/SparkPost/pizza-bot/tree/02-stores
