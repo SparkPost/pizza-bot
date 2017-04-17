@@ -109,6 +109,12 @@ This is useful because Slack will need to send HTTP requests to the Slack App ru
 
 In our experience, `ngrok` has been easier to work with than `localtunnel`, so we will be using that for the duration of the workshop.
 
+### Minimum Viable Product
+
+This is the smallest version of your app that meets your users needs. By building a small version of your app that is still useful to your users, you can focus on something you can finish and ship to your users. You can have the best, most awesome, groundbreaking app, but if nobody can use it because it's "not done yet", you don't actually have anything.
+
+It's always important to remember "[shipping is a feature](https://www.joelonsoftware.com/2009/09/23/the-duct-tape-programmer/)", maybe the most important feature.
+
 ## Helpful Hints
 
 Make sure your `json_file_store` path is `./db/`, otherwise your app may restart unexpectedly (checkout the `start` script in `package.json` to see if you can figure out why).
