@@ -3,6 +3,8 @@ Order :pizza: From Slack
 
 ## Exercise 8: Next Steps
 
+This one is up to you!
+
 ## Where Can You Go From Here?
 
 ### Error Handling
