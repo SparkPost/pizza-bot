@@ -57,6 +57,8 @@ You will be using one repo for your team so add everyone on your team as a "coll
 
 Make a local copy of your version using the `git clone` command. Use the "Clone or Download" button to get the URL to your copy of the project.
 
+Type `cd pizza-bot` to change your working directory into your copy of the repo.
+
 ### Create a .env File
 
 Create a file named `.env` in the root of your project. Add this line to the file:
