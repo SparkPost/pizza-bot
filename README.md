@@ -42,6 +42,8 @@ Start a totally new bot! Need some ideas? Take a look at this repo of open, publ
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
 * [PizzaPI source](https://github.com/RIAEvangelist/node-dominos-pizza-api)
 * [Slack Message Buttons](https://api.slack.com/docs/message-buttons)
+* [Slack Message Menus](https://api.slack.com/docs/message-menus)
+* [Public APIs](https://github.com/toddmotto/public-apis)
 
 ## Concepts
 
