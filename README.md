@@ -1,69 +1,13 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Exercise 5: Convert your Bot to an App
+## Exercise 7: Submit an Order
 
-OK... this exercise is going to be pretty straightforward code-wise, but a little more heavy on the concept side. You can always circle back to the ideas later
-
-### Install ngrok
-
-`npm install -g ngrok`
-
-### Run ngrok
-
-Open a new terminal window and enter this command:
-```bash
-ngrok http 3000
-```
-
-You will see the ngrok window. You should see two values for `Forwarding`, copy the `https` version and share it with Avi and Cole in Slack. They will use it to configure your app with Slack.
-
-**NOTE**: Don't restart ngrok or you will get a new URL. If you do restart ngrok, just pass the new URL to Avi and Cole and they'll update your
-app's configuration with Slack.
-
-
-### Get Your Credentials and Update Your `.env` File
-
-Avi and Cole will give you three things: a `CLIENT_ID`, a `CLIENT_SECRET`, and a activation URL.
-
-Add the following to your `.env` file (remember: this is the file that holds your environment-specific variables, like API keys):
-
-```bash
-export PORT=3000
-export CLIENT_ID=<CLIENT_ID>
-export CLIENT_SECRET=<CLIENT_SECRET>
-```
-
-**NOTE**: Don't forget to stop your bot and type `source .env` to set the new environment variables in your terminal session.
-
-### Update `index.js`
-
-You'll need to update your Skellington configurations to use the new Client ID/Client Secret pair. Your config should look like this at the end:
-
-```js
-'use strict'
-
-require('skellington')({
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  port: process.env.PORT,
-  scopes: ['bot'],
-  plugins: [require('./plugins/welcome'), require('./plugins/order')],
-  botkit: {
-    interactive_replies: true,
-    json_file_store: './db/'
-  }
-})
-```
-
-* Remove `slackToken`:
-* Add `clientId: process.env.CLIENT_ID`: Your CLIENT_ID from Slack.
-* Add `clientSecret: process.env.CLIENT_SECRET`: Your CLIENT_SECRET from Slack.
-* Add `port: process.env.PORT`: The port your local server will listen on.
-* Add `scopes: ['bot']`: These are the OAuth scopes your app will use.
-* Add `bokit: {}`: These configs will be passed directly to the Botkit library.
-* Add `bokit.interactive_replies: true`: This setting will let us use Slack message buttons in our app.
-* Add `bokit.json_file_store: './db/'`: Botkit will store some things behind the scenes, this sets up a small JSON file store. Don't worry too much about what goes into it, we won't be using it that much for this project.
+* Ask users to confirm their order. You should include the address and the type of pizza they ordered.
+* Users should accept or decline using message buttons.
+* If the user accepts, place an order with Dominos, if they decline send them a farewell message.
+* If you place an order, print the order ID.
+* Run npm test and fix all problems that you find. 
 
 ## Resources
 
@@ -71,37 +15,29 @@ require('skellington')({
 * [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
 * [PizzaPI source](https://github.com/RIAEvangelist/node-dominos-pizza-api)
-
+* [Slack Message Buttons](https://api.slack.com/docs/message-buttons)
 
 ## Concepts
 
-### Bots vs. Apps
+### Ending Conversations
 
-
-### Local Tunneling
-
-Don't worry too much about how this works, but tools like `ngrok` and `localtunnel` will let you access endpoints on your
-local server from anywhere on the Internet. These tools will give you a URL
-
-This is useful because Slack will need to send HTTP requests to the Slack App running on your machine.
-
-In our experience, `ngrok` has been easier to work with than `localtunnel`, so we will be using that for the duration of the workshop.
-
-
-
-### Botkit Storage
-
-
+It turns out to end a conversation, you just don't need a next step and Botkit will let it end naturally. There's no special code to write; conversations will time out eventually.
 
 ## Helpful Hints
 
-### Making a Slack App
+### Constructing an Order
+
+You will need to create a `pizzapi.Order` object. This will require a `storeID`, a `deliveryMethod`, and a `customer` Object. The customer only needs to have an `address` field. You can't pass items in to the `Order` constructor, you'll need to add those separately. Finally you'll need to `place` the order.
+
+### Don't worry! You won't really get a pizza!
+
+The `Order` object requires payment information for `place` to succeed, so to really place an order you would need to ask users for their credit card information. If you were to build the credit card into this conversation this for yourself, you might think about pulling the whole conversation into a direct message (we used public conversations for simple collaboration). If you wanted to make this bot publicly available, you would have to worry about PCI compliance (a thing you have to get to handle other people's credit cards). But hey, if you just wanna do it for yourself go for it!
 
 ## Next Exercise
 
-Alright! Detour over! Now back to our regularly scheduled program!
+Holy smokes! We did it! We wrote a bot that will ask people what kind of pizza they want, where the want it from, and where they want it delivered! Give yourself a well deserved pat on the back :smile:
 
-In the next exercise, we're going to use some message buttons to get an order together! Mmmm! I can almost taste that delicious "pizza"!
+In the next exercise, we're going to talk about what you could do next! 
 
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/06-message-buttons
+Next Exercise: https://github.com/SparkPost/pizza-bot/tree/08-next-steps
 
