@@ -70,7 +70,7 @@ require('skellington')({
 * [Botkit docs and source](https://github.com/howdyai/botkit)
 * [Skellington docs and source](https://github.com/Skellington-Closet/skellington)
 * [PizzaPI docs](http://riaevangelist.github.io/node-dominos-pizza-api/)
-* [PizzaPI source](https://github.com/madelinecameron/PizzaPI)
+* [PizzaPI source](https://github.com/RIAEvangelist/node-dominos-pizza-api)
 
 
 ## Concepts
