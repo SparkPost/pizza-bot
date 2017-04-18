@@ -1,13 +1,37 @@
 # pizza-bot
 Order :pizza: From Slack
 
-## Exercise 7: Submit an Order
+## Exercise 8: Next Steps
 
-* Ask users to confirm their order. You should include the address and the type of pizza they ordered.
-* Users should accept or decline using message buttons.
-* If the user accepts, place an order with Dominos, if they decline send them a farewell message.
-* If you place an order, print the order ID.
-* Run npm test and fix all problems that you find. 
+## Where Can You Go From Here?
+
+### Error Handling
+
+We didn't do much error handling in this project. What happens if the order fails? Or if someone types only their Zip code for an address? These are the types of things you'll need to add to a final product.
+
+### Order More than 1 Pizza
+
+Ordering only one pizza isn't going to work if you have friends over. Think about how you could order more than one, maybe even several pizzas of different types.
+
+### Add Different Types of Orders
+
+Just cheese and pepperoni? What about sausage? Or pineapple? Or different crusts? Or maybe some sides. Investigate the menu and find some things you think you or your friends would want. You might take a look at Slack's [message menus](https://api.slack.com/docs/message-menus).
+
+### Ask for a Credit Card
+
+Like we mentioned in the last exercise, you can't really order anything without a credit card. Find a (private) way to get your users credit card information. Remember, if you want to release this to the wider world you'll need to worry about PCI compliance (you probably don't want to deal with that).
+
+### Track Orders
+
+Since we gave users their order ID, we can use that to track their order. Add a new plugin with some interactions for tracking so you'll know where your pizza is!
+
+### Set Up Hosting
+
+You can't run this bot off your laptop forever. Set up deployments to Heroku or another service. Heroku is great because you can run a bot for free and you can set up automatic deployments whenever you push to master. It's like magic when you merge a commit and it shows up in your production bot!
+
+### Start Something Totally New
+
+Start a totally new bot! Need some ideas? Take a look at this repo of open, public APIs you could have your bot interact with: https://github.com/toddmotto/public-apis
 
 ## Resources
 
@@ -19,25 +43,19 @@ Order :pizza: From Slack
 
 ## Concepts
 
-### Ending Conversations
+### Keep Iterating
 
-It turns out to end a conversation, you just don't need a next step and Botkit will let it end naturally. There's no special code to write; conversations will time out eventually.
+Get something out there, then keep making it better. We recommend creating a series of Github issues on your repo to track all your ideas. When you get some free time, make a branch and see if you can make progress. 
 
 ## Helpful Hints
 
-### Constructing an Order
+### Small Changes 
 
-You will need to create a `pizzapi.Order` object. This will require a `storeID`, a `deliveryMethod`, and a `customer` Object. The customer only needs to have an `address` field. You can't pass items in to the `Order` constructor, you'll need to add those separately. Finally you'll need to `place` the order.
+Whatever you do next, remember to think through your project (or at least the first part of your project) and define several small steps you could make towards your final goal. It's ok if you don't know how to get from start to finish right away, you will learn more about your project as you go.
 
-### Don't worry! You won't really get a pizza!
-
-The `Order` object requires payment information for `place` to succeed, so to really place an order you would need to ask users for their credit card information. If you were to build the credit card into this conversation this for yourself, you might think about pulling the whole conversation into a direct message (we used public conversations for simple collaboration). If you wanted to make this bot publicly available, you would have to worry about PCI compliance (a thing you have to get to handle other people's credit cards). But hey, if you just wanna do it for yourself go for it!
+If you use Github issues, try to keep to one issue per branch. That will keep you change sets small and easy to understand and will prevent weird order dependencies from cropping up ("Oh wait.. branch-a depends on some stuff on branch-b. I finished all the stuff I wanted in branch-b, but now I started this other thing and it will take a week! Now I can't do anything with branch-a, and I can't start branch-c until that's done....").
 
 ## Next Exercise
 
-Holy smokes! We did it! We wrote a bot that will ask people what kind of pizza they want, where the want it from, and where they want it delivered! Give yourself a well deserved pat on the back :smile:
-
-In the next exercise, we're going to talk about what you could do next! 
-
-Next Exercise: https://github.com/SparkPost/pizza-bot/tree/08-next-steps
+At this point, it's a choose your own adventure! You now have the tools to build a Slack bot from scratch. Let us know on Twitter what you came up with. You can find us [@colestrode](https://twitter.com/colestrode), [@avrahamgoldman](https://twitter.com/avrahamgoldman), or [@sparkpost](https://twitter.com/sparkpost). Thanks for joining us and keep up the awesome work!
 
