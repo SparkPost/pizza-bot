@@ -1,5 +1,5 @@
 # pizza-bot
-Learn how to order 🍕 From Slack
+Learn how to order 🍕 from Slack
 
 ## Exercise 4: Choose a Store
 * After your bot lists all the stores near the user's address, ask them to pick a store by ID.
@@ -16,7 +16,7 @@ Learn how to order 🍕 From Slack
 
 ## Concepts
 
-### Docs Aren't the Truth
+### Docs Aren't (Always) the Truth
 
 Uh-oh... the [docs](http://riaevangelist.github.io/node-dominos-pizza-api/) say this is how you should get Store info:
 
@@ -71,16 +71,14 @@ conversation.addMessage({
 })
 ```
 
-In the examples, we're making a method for each set of conversation interactions. These methods
-have names like `setUpAddressConvo` and `setUpStoresConvo`. That helps keep our interactions grouped
-together and keep things organized (if you remember that from the first exercise, give yourself a :star2:!).
+In the examples, we're making a method for each set of conversation interactions. These methods have names like `setUpAddressConvo` and `setUpStoresConvo`. That helps keep our interactions grouped together and keep things organized (if you remember that from the first exercise, give yourself a :star2:!).
 
 ## Next Exercise
 
-Woohoo! We have a bot that can ask for an address, find a "restaurant", and let the user pick where they want "pizza" from!
+Woohoo! We now have a bot that can ask for an address, find a "restaurant", and let the user pick where they want "pizza" from!
 And we learned a valuable lesson about the pitfalls of documentation.
 
-In the next exercise, we're going to take a break from coding to think about user experience. Then, we'll get back on board the pizza train.
+In the next exercise, we're going to take a break from coding to think about user experience. Then we'll get back on board the pizza train.
 
 Next Exercise: https://github.com/SparkPost/pizza-bot/tree/05-slack-app
 
