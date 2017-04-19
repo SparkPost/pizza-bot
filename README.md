@@ -31,6 +31,10 @@ Since we gave users their order ID, we can use that to track their order. Add a 
 
 You can't run this bot off your laptop forever. Set up deployments to Heroku or another service. Heroku is great because you can run a bot for free and you can set up automatic deployments whenever you push to master. It's like magic when you merge a commit and it shows up in your production bot!
 
+### Send a Confirmation Email
+
+Send a confirmation email to your user. You can get their email from the Slack API, or you could have your bot ask them to type it into Slack. Of course you'll have to find some [service](https://developers.sparkpost.com) that could send that email for you...
+
 ### Start Something Totally New
 
 Start a totally new bot! Need some ideas? Take a look at this repo of open, public APIs you could have your bot interact with: https://github.com/toddmotto/public-apis
