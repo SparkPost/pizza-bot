@@ -1,5 +1,5 @@
 # pizza-bot
-Order :pizza: From Slack
+Learn to order :pizza: from Slack
 
 ## Exercise 8: Next Steps
 
@@ -9,19 +9,19 @@ This one is up to you!
 
 ### Error Handling
 
-We didn't do much error handling in this project. What happens if the order fails? Or if someone types only their Zip code for an address? These are the types of things you'll need to add to a final product.
+We didn't do much error handling in this project. What happens if the order fails? Or if someone types only their zip code for an address? These are the types of things you'll want to add to a final product.
 
 ### Order More than 1 Pizza
 
-Ordering only one pizza isn't going to work if you have friends over. Think about how you could order more than one, maybe even several pizzas of different types.
+Ordering only one pizza isn't going to work if you have friends over. Think about how you could order more than one, or maybe even several pizzas of different types.
 
 ### Add Different Types of Orders
 
-Just cheese and pepperoni? What about sausage? Or pineapple? Or different crusts? Or maybe some sides. Investigate the menu and find some things you think you or your friends would want. You might take a look at Slack's [message menus](https://api.slack.com/docs/message-menus).
+Just cheese and pepperoni can get pretty boring. What about sausage? Or pineapple? Or different crusts? Or maybe some sides. Investigate the menu and find some things you think you or your friends would want. You might take a look at Slack's [message menus](https://api.slack.com/docs/message-menus).
 
 ### Ask for a Credit Card
 
-Like we mentioned in the last exercise, you can't really order anything without a credit card. Find a (private) way to get your users credit card information. Remember, if you want to release this to the wider world you'll need to worry about PCI compliance (you probably don't want to deal with that).
+Like we mentioned in the last exercise, you can't really order anything without a credit card. Find a (private) way to get your users' credit card information. Remember, if you want to release this to the wider world you'll need to worry about PCI compliance (you probably don't want to deal with that).
 
 ### Track Orders
 
@@ -55,9 +55,9 @@ Get something out there, then keep making it better. We recommend creating a ser
 
 ### Small Changes 
 
-Whatever you do next, remember to think through your project (or at least the first part of your project) and define several small steps you could make towards your final goal. It's ok if you don't know how to get from start to finish right away, you will learn more about your project as you go.
+Whatever you do next, remember to think through your project (or at least the first part of your project) and define several small steps you could make towards your final goal. It's ok if you don't know how to get from start to finish right away. You'll learn more about your project as you go.
 
-If you use Github issues, try to keep to one issue per branch. That will keep you change sets small and easy to understand and will prevent weird order dependencies from cropping up ("Oh wait.. branch-a depends on some stuff on branch-b. I finished all the stuff I wanted in branch-b, but now I started this other thing and it will take a week! Now I can't do anything with branch-a, and I can't start branch-c until that's done....").
+If you use Github issues, try to keep to one issue per branch. That will keep your change sets small and easy to understand, and will prevent weird order dependencies from cropping up ("Oh wait.. branch-a depends on some stuff on branch-b. I finished all the stuff I wanted in branch-b, but now I started this other thing and it will take a week! Now I can't do anything with branch-a, and I can't start branch-c until that's done...").
 
 ## Next Exercise
 
