@@ -25,7 +25,7 @@ Button clicks cause Slack to send an HTTP request to your bot, which then trigge
 
 `npm install -g ngrok`
 
-`ngrok` creates an HTTP "proxy": it gives you a random URL and all HTTP requests to that URL will be funnelled to the bot running on your machine. Don't worry too much about how it works; it's okay to let things be magical in the beginning. :magicwand:
+`ngrok` creates an HTTP "proxy": it gives you a random URL and all HTTP requests to that URL will be funnelled to the bot running on your machine. Don't worry too much about how it works; it's okay to let things be magical in the beginning.
 
 ### Run ngrok
 
@@ -104,7 +104,7 @@ Skellington handles most of the complicated setup of a Slack App, all you need i
 
 ### Local Tunneling
 
-Don't worry too much about how this works, but tools like `ngrok` and `localtunnel` will let you access endpoints on your local server from anywhere on the Internet by creating an HTTP Proxy. These tools will give you a URL, and all HTTP requests to that URL will be routed to your machine. It's like magic (and that's ok!). :magicwand:
+Don't worry too much about how this works, but tools like `ngrok` and `localtunnel` will let you access endpoints on your local server from anywhere on the Internet by creating an HTTP Proxy. These tools will give you a URL, and all HTTP requests to that URL will be routed to your machine. It's like magic (and that's ok!).
 
 This is useful because Slack will need to send HTTP requests to the Slack App running on your machine.
 
