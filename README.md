@@ -2,7 +2,7 @@
 Learn how to order 🍕 From Slack
 
 ## Exercise 3: Get a Real Address
-* When your bot hears "I want a pizza" aske the user the which address they want their pizza delivered to
+* When your bot hears "I want a pizza", ask the user which address they want their pizza delivered to
 * Print any nearby restaurants. This involves asking the user a question and waiting for a response. We call these long running interactions "conversations".
 * Store the address you get from the user and your list of stores in the conversation state. (See the section below about Variables in Conversations).
 * Run `npm test` and fix all problems that you find.
@@ -60,7 +60,7 @@ Each message and question is associated with a "thread." You can think of a thre
 We use threads to keep our conversation callbacks flat (no [pyramid of doom!](http://callbackhell.com/)). You can also repeat/reuse parts of your conversations
 the same path very easily with threads. This is very handy for error handling.
 
-You can use `convo.gotoThread` to jump to different different threads. This will come in handy in `convo.addQuestion`.
+You can use `convo.gotoThread` to jump to different threads. This will come in handy in `convo.addQuestion`.
 
 `convo.addMessage` doesn't take a callback, so to move to another thread, you will need to specify an "action" like so:
 
@@ -74,7 +74,7 @@ convo.addMessage({
 ### Variables in Conversations
 
 You can set variables on a conversation and retrieve them later. Use the `conversation.setVar(key, value)` method to set variables.
-You can access the values programmatically with `conversation.vars.key`. If you need access those values inside a 
+You can access the values programmatically with `conversation.vars.key`. If you need to access those values inside a 
 conversation response, you can use [mustache syntax](https://github.com/janl/mustache.js/#templates). The `conversation.vars` 
 will be exposed as `vars` in the template: `Here is your address: {{ vars.address }}`.
 
@@ -88,14 +88,14 @@ Reuse everything you can from the last exercise. For instance: keep those method
 ### Looping Over Arrays In Messages With Mustache
 
 Let's say you have an array of store addresses and you added that as a variable named `stores` to your conversation. 
-To print each store address on it's own line, you could do something like this:
+To print each store address on its own line, you could do something like this:
 
 ```js
   convo.addMessage(`Here are some nearby pizza stores: {{#vars.stores}}\r\n{{.}} {{/vars.stores}}`, `list-stores`)
 ```
 
 `{{#vars.stores}} ... {{/vars.stores}}` is mustache syntax to iterate over each entry in the `stores` array.
-That `\r\n` will be interpreted by Slack as a new line character
+That `\r\n` will be interpreted by Slack as a new line character.
 `{{.}}` is mustache syntax to print the current entry in the `stores` array. This works if `stores` is an array of Strings.
 If we had an array of objects, you could use the property name in the mustache template, something like `{{address}}`.
 
@@ -104,7 +104,7 @@ If we had an array of objects, you could use the property name in the mustache t
 
 Great Job! You now can start a conversation with a user, ask a them a question, and respond based on what they say. 
 You can even store information for later. These are all super important concepts in bot-building! 
-Now things are going to get interesting!
+Now things are going to get interesting.
 
 Next Exercise: https://github.com/SparkPost/pizza-bot/tree/04-store
 
