@@ -82,6 +82,10 @@ require('skellington')({
 * Add `bokit.interactive_replies: true`: This setting will let us use Slack message buttons in our app.
 * Add `bokit.json_file_store: './db/'`: Botkit will store some things behind the scenes, this sets up a small JSON file store. Don't worry too much about what goes into it, we won't be using it that much for this project.
 
+### Visit Your Activation URL
+
+Paste the activation URL Avi and Cole gave you into your browser. This will start Slack's "invite flow" that will add your app to our shared Slack team. You will notice some logs in your terminal about a team being added. Congratulations! You now have a working Slack app!
+
 ## Resources
 
 * [Botkit docs and source](https://github.com/howdyai/botkit)
@@ -100,7 +104,7 @@ A single-team bot takes a Slack token and can listen to events over a websocket 
 
 A Slack App is like a super-charged single-team bot. It is more complicated to configure and set up than a single-team bot. To configure a Slack App, you need a Client ID and Client Secret. It also requires a webserver listening on a port for HTTP requests. One app can interact with multiple teams and has full access to all the Slack APIs. Slack Apps can have a bot user just like a single-team bot, and while they don't have to, they usually do.
 
-Skellington handles most of the complicated setup of a Slack App, all you need is some different configuration options.
+Skellington handles most of the complicated setup of a Slack App, all you need is some different configuration options and a way to receive HTTP requests.
 
 ### Local Tunneling
 
