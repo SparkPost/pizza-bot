@@ -3,7 +3,7 @@ Learn to order :pizza: from Slack
 
 ## Exercise 8: Next Steps
 
-This one is up to you!
+This one is up to you! You get to choose how you improve your app!
 
 ## Where Can You Go From Here?
 
@@ -11,7 +11,7 @@ This one is up to you!
 
 We didn't do much error handling in this project. What happens if the order fails? Or if someone types only their zip code for an address? These are the types of things you'll want to add to a final product.
 
-### Order More than 1 Pizza
+### Order More than One Pizza
 
 Ordering only one pizza isn't going to work if you have friends over. Think about how you could order more than one, or maybe even several pizzas of different types.
 
@@ -27,13 +27,13 @@ Like we mentioned in the last exercise, you can't really order anything without 
 
 Since we gave users their order ID, we can use that to track their order. Add a new plugin with some interactions for tracking so you'll know where your pizza is!
 
-### Set Up Hosting
-
-You can't run this bot off your laptop forever. Set up deployments to Heroku or another service. Heroku is great because you can run a bot for free and you can set up automatic deployments whenever you push to master. It's like magic when you merge a commit and it shows up in your production bot!
-
 ### Send a Confirmation Email
 
 Send a confirmation email to your user. You can get their email from the Slack API, or you could have your bot ask them to type it into Slack. Of course you'll have to find some [service](https://developers.sparkpost.com) that could send that email for you...
+
+### Set Up Hosting
+
+You can't run this bot off your laptop forever. Set up deployments to Heroku or another service. Heroku is great because you can run a bot for free and you can set up automatic deployments whenever you push to master. It's like magic when you merge a branch and it shows up in your production bot!
 
 ### Start Something Totally New
 
