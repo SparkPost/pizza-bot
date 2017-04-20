@@ -37,9 +37,9 @@ and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-githu
 
 ## Break Into Teams
 
-Get into 10 teams of 2-3 (we can only have up to 10 teams because of limitations with the number of bots on our Slack team).
+Get into teams of 2-3.
 
-Once you are in groups, pick your team name and create a public Slack channel. Invite Avi, Cole, and everyone on your team using the `/invite` command. 
+Once you are in teams, pick your team name and create a public Slack channel. Invite Avi, Cole, and everyone on your team using the `/invite` command. 
 
 Once you have your team channel set up, DM your team name to Avi or Cole, and one of them will give you a Slack API token.
 
