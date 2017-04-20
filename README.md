@@ -3,7 +3,7 @@ Learn how to order 🍕 from Slack
 
 ## Exercise 4: Choose a Store
 * After your bot lists all the stores near the user's address, ask them to pick a store by ID.
-* Get the Store info from the `dominos`.
+* Get the Store info using the `dominos` library.
 * If that request fails, give the user an error message and ask for their store again. If the request succeeds, set the result that comes back from the `dominos` library as a variable on the conversation.
 * Run `npm test` and fix all problems that you find.
 
