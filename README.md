@@ -51,7 +51,7 @@ Enforcing a common style helps in a few ways:
 
 The important thing is consitency: you don't have to agree with the style, but it is important to be consistent with the style in a project. That is a kindness to everyone who works on the project (and your future self!).
 
-After you run `npm test` you might notice that all of your semi-colons are gone. [That's okay!](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding). 
+After you run `npm test` you might notice that all of your semi-colons are gone. [That's okay!](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
 
 ## Helpful Hints
 
