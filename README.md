@@ -34,14 +34,14 @@ Open a new terminal window and enter this command:
 ngrok http 3000
 ```
 
-You will see the ngrok window. You should see two values for `Forwarding`. Copy the `https` version and share it with Avi and Cole in Slack. They will use it to configure your app with Slack.
+You will see the ngrok window. You should see two values for `Forwarding`. Copy the `https` version and share it with the instructor or one of the assistants in Slack. They will use it to configure your app with Slack.
 
-**NOTE**: Don't restart ngrok or you will get a new URL. If you do accidentally restart ngrok, just pass the new URL to Avi and Cole and they'll update your app's configuration with Slack.
+**NOTE**: Don't restart ngrok or you will get a new URL. If you do accidentally restart ngrok, just pass the new URL one of the assistants and they'll update your app's configuration with Slack.
 
 
 ### Get Your Credentials and Update Your `.env` File
 
-Avi and Cole will give you three things: a `CLIENT_ID`, a `CLIENT_SECRET`, and a activation URL.
+One of the assistants will give you three things: a `CLIENT_ID`, a `CLIENT_SECRET`, and a activation URL.
 
 Add the following to your `.env` file (remember: this is the file that holds your environment-specific variables, like API keys):
 
@@ -84,7 +84,7 @@ require('skellington')({
 
 ### Visit Your Activation URL
 
-Paste the activation URL Avi and Cole gave you into your browser. This will start Slack's "invite flow" that will add your app to our shared Slack team. You will notice some logs in your terminal about a team being added. Congratulations! You now have a working Slack app!
+Paste the activation URL one of the assistants gave you into your browser. This will start Slack's "invite flow" that will add your app to our shared Slack team. You will notice some logs in your terminal about a team being added. Congratulations! You now have a working Slack app!
 
 ## Resources
 
