@@ -39,9 +39,9 @@ and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-githu
 
 Get into teams of 2-3.
 
-Once you are in teams, pick your team name and create a public Slack channel. Invite Avi, Cole, and everyone on your team using the `/invite` command. 
+Once you are in teams, pick your team name and create a public Slack channel. Invite the workshop instructor, assistants and everyone on your team using the `/invite` command. 
 
-Once you have your team channel set up, DM your team name to Avi or Cole, and one of them will give you a Slack API token.
+Once you have your team channel set up, DM your team name to the instructor, and they will give you a Slack API token.
 
 ## Set Up The Project
 
