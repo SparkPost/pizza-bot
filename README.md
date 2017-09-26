@@ -65,5 +65,5 @@ If you use Github issues, try to keep to one issue per branch. That will keep yo
 
 ## Next Exercise
 
-At this point, it's a choose your own adventure! You now have the tools to build a Slack bot from scratch. Let us know on Twitter what you came up with. You can find us [@colestrode](https://twitter.com/colestrode), [@avrahamgoldman](https://twitter.com/avrahamgoldman), or [@sparkpost](https://twitter.com/sparkpost). Thanks for joining us and keep up the awesome work!
+At this point, it's a choose your own adventure! You now have the tools to build a Slack bot from scratch. Let us know on Twitter what you came up with. You can find us [@colestrode](https://twitter.com/colestrode), [@theavigoldman](https://twitter.com/theavigoldman), [@aydrianh](https://twitter.com/aydrianh), or [@sparkpost](https://twitter.com/sparkpost). Thanks for joining us and keep up the awesome work!
 
