@@ -92,7 +92,7 @@ function setUpStoresConvo (convo) {
         return
       }
 
-      convo.setVar(storeData.result)
+      convo.setVar(`storeData`, storeData.result)
       convo.gotoThread(`list-menu`)
     })
   }, {}, `pick-store`)
