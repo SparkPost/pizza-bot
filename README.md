@@ -4,7 +4,7 @@ Learn how to order :pizza: from Slack
 ## Welcome Pizza Botter
 
 Howdy :wave: We're going to build a bot today. An awesome bot that will order you hot, delicious pizza. 
-From Domino's. So, hot pizza. Well, maybe hot, but definitely at least warm pizza. From Domino's.
+From Domino's. So, hot pizza. Well, maybe not hot, but definitely at least warm pizza. From Domino's.
 OK, let's not get hung up on the definitions of "pizza" or "food". The bot will be awesome, I promise. 
 
 Whether or not you actually want to _eat_ Domino's "pizza", this project will show us how to take a fun idea (a Slack bot that delivers pizza), break it down into small and manageable steps, and work with real-life (sometimes messy) external libraries to make your idea become a real thing. 
