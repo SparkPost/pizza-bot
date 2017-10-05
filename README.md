@@ -3,19 +3,19 @@ Learn how to order :pizza: from Slack
 
 ## Welcome Pizza Botter
 
-Howdy :wave: We're going to build a bot today. An awesome bot that will order you hot, delicious pizza. 
+Howdy :wave: We're going to build a bot today. An awesome bot that will order you hot, delicious pizza.
 From Domino's. So, hot pizza. Well, maybe not hot, but definitely at least warm pizza. From Domino's.
-OK, let's not get hung up on the definitions of "pizza" or "food". The bot will be awesome, I promise. 
+OK, let's not get hung up on the definitions of "pizza" or "food". The bot will be awesome, I promise.
 
-Whether or not you actually want to _eat_ Domino's "pizza", this project will show us how to take a fun idea (a Slack bot that delivers pizza), break it down into small and manageable steps, and work with real-life (sometimes messy) external libraries to make your idea become a real thing. 
+Whether or not you actually want to _eat_ Domino's "pizza", this project will show us how to take a fun idea (a Slack bot that delivers pizza), break it down into small and manageable steps, and work with real-life (sometimes messy) external libraries to make your idea become a real thing.
 
-Before we begin, let's do a little set up. 
+Before we begin, let's do a little set up.
 
 ## Things You Need Before We Start
 
 ### Node
 
-You will need to have Node installed on your machine. The libraries we use require Node 4+ (the examples in this repo use the current release, Node 6). 
+You will need to have Node installed on your machine. The libraries we use require Node 4+ (the examples in this repo use the current release, Node 6).
 If you have an older version, check out [nvm](https://github.com/creationix/nvm) to upgrade.
 
 Check if you have Node installed by typing `node --version` in your terminal. If you get an error, download it here: https://nodejs.org/en/download/
@@ -30,8 +30,8 @@ Check if you have Git installed by typing `git --version` in your terminal. If y
 
 https://github.com/join
 
-Sign up for a GitHub account. If you want to clone the code locally and push changes, you'll 
-need to [generate](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) an SSH key 
+Sign up for a GitHub account. If you want to clone the code locally and push changes, you'll
+need to [generate](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) an SSH key
 and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) it to GitHub.
 
 
@@ -39,7 +39,7 @@ and [upload](https://help.github.com/articles/adding-a-new-ssh-key-to-your-githu
 
 Get into teams of 2-3.
 
-Once you are in teams, pick your team name and create a public Slack channel. Invite the workshop instructor, assistants and everyone on your team using the `/invite` command. 
+Once you are in teams, pick your team name and create a public Slack channel. Invite the workshop instructor, assistants and everyone on your team using the `/invite` command.
 
 Once you have your team channel set up, DM your team name to the instructor, and they will give you a Slack API token.
 
@@ -67,7 +67,7 @@ Create a file named `.env` in the root of your project. Add this line to the fil
 export SLACK_TOKEN=replace_me
 ```
 
-When we give you a Slack API token, replace `replace_me` with the token.
+If you are comfortable creating your own Slack API token, you can follow [these instructions](./docs/CREATE_BOT.md). Otherwise, ask a mentor to create one for you. Once you have a Slack API token, replace `replace_me` with the token.
 
 Once you have your token, open a terminal and type:
 
@@ -75,8 +75,8 @@ Once you have your token, open a terminal and type:
 source .env
 ```
 
-This will expose the variables in your `.env` file to the current terminal session. **You will need to 
-type `source .env` for each new terminal window you open.** If you see this error `Missing configuration. Config must 
+This will expose the variables in your `.env` file to the current terminal session. **You will need to
+type `source .env` for each new terminal window you open.** If you see this error `Missing configuration. Config must
 include either slackToken AND/OR clientId, clientSecret, and port` you forgot to type `source .env` :smile:
 
 ### Install Depedencies
@@ -95,5 +95,5 @@ Heads up: your bot will restart on every code change. This is a great feature fo
 
 ## First Exercise
 
-Once you have your bot running, it's time to dig in! Take a look at the README in this branch for the first exercise: 
+Once you have your bot running, it's time to dig in! Take a look at the README in this branch for the first exercise:
 https://github.com/SparkPost/pizza-bot/tree/01-plugin
