@@ -82,10 +82,6 @@ require('skellington')({
 * Add `bokit.interactive_replies: true`: This setting will let us use Slack message buttons in our app.
 * Add `bokit.json_file_store: './db/'`: Botkit will store some things behind the scenes, this sets up a small JSON file store. Don't worry too much about what goes into it, we won't be using it that much for this project.
 
-### Visit Your Activation URL
-
-Paste the activation URL one of the assistants gave you into your browser. This will start Slack's "invite flow" that will add your app to our shared Slack team. You will notice some logs in your terminal about a team being added. Congratulations! You now have a working Slack app!
-
 ## Resources
 
 * [Botkit docs and source](https://github.com/howdyai/botkit)
