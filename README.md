@@ -34,7 +34,7 @@ You can construct message buttons by passing a configuration object with an atta
       style: 'primary',
       type: 'button'
     }, {
-      name: 'orance',
+      name: 'orange',
       text: 'Orange',
       value: 'O',
       style: 'danger',
@@ -60,7 +60,7 @@ You can treat this like any other question in your conversation. The first argum
 
 If you were to dig into the Domino's menu, you would find an Item with a code of `S_PIZZA` and some addition options for toppings. If you dug further, you'd find that code for the cheese option is `C` and pepperoni is `P`. This will come in handy when building a `pizzapi.Item`.
 
-Also, for some reason, the default `quantity` of an Item for an item is 0 ¯\_(ツ)_/¯ You might want more than zero pizzas.
+Also, for some reason, the default `quantity` of an Item for an item is 0 ¯\\_(ツ)_/¯ You might want more than zero pizzas.
 
 ### Text, Name, Value! Oh My!
 
