@@ -7,7 +7,7 @@ This exercise is going to be pretty straightforward code-wise, but a little more
 
 Here's the gist: the Domino's menu is complicated and there's not much documentation on how we can use all the options it provides. So we're going to simplify the problem: we're going to give users an option of one of two pizzas, either cheese or pepperoni.
 
-Why not try to figure out the menu now? We are building what's called an **MVP**, a Minimum Viable Product. We want our users to order a pizza and this approach of "hard-coding" their options accomplishes that. We can always come back and make our bot smarter and find clever ways to display the menu. But for now that would send us down a rabbit hole of investigation without a clear end in sight. 
+Why not try to figure out the menu now? We are building what's called an **MVP**, a Minimum Viable Product. We want our users to order a pizza and this approach of "hard-coding" their options accomplishes that. We can always come back and make our bot smarter and find clever ways to display the menu. But for now that would send us down a rabbit hole of investigation without a clear end in sight.
 
 *Sometimes it's better to keep your momentum up and solve hard problems later.*
 
@@ -15,7 +15,7 @@ Always look for ways to "side-step" the current problem with a simpler solution.
 
 ### The Approach
 
-Slack offers something called "message buttons", basically buttons attached to your message that users can click. Buttons are great when you have a few options you want users to choose from. 
+Slack offers something called "message buttons", basically buttons attached to your message that users can click. Buttons are great when you have a few options you want users to choose from.
 
 Button clicks cause Slack to send an HTTP request to your bot, which then triggers an action based on which button was clicked. The single team bot we've built can't receive HTTP requests, only Slack Apps can do that (see below for the differences). So we're going to convert our single-team bot to a Slack App. Lucky for you, Skellington takes care of a lot of the hard work for you! All you'll need to do is add  configs.
 
@@ -34,14 +34,13 @@ Open a new terminal window and enter this command:
 ngrok http 3000
 ```
 
-You will see the ngrok window. You should see two values for `Forwarding`. Copy the `https` version and share it with the instructor or one of the assistants in Slack. They will use it to configure your app with Slack.
+You will see the ngrok window. You should see two values for `Forwarding`. We'll use the `https` version to configure your app with Slack.
 
-**NOTE**: Don't restart ngrok or you will get a new URL. If you do accidentally restart ngrok, just pass the new URL one of the assistants and they'll update your app's configuration with Slack.
-
+**NOTE**: Don't restart ngrok or you will get a new URL. If you do accidentally restart ngrok, just pass the new URL one of the assistants and they'll help you update your app's configuration with Slack.
 
 ### Get Your Credentials and Update Your `.env` File
 
-One of the assistants will give you three things: a `CLIENT_ID`, a `CLIENT_SECRET`, and a activation URL.
+If you are comfortable creating your own Slack App, you can follow [these instructions](./docs/CREATE_APP.md). Otherwise, give one of the assistants your ngrok url and they will give you three things: a `CLIENT_ID`, a `CLIENT_SECRET`, and a activation URL.
 
 Add the following to your `.env` file (remember: this is the file that holds your environment-specific variables, like API keys):
 
@@ -98,7 +97,7 @@ Paste the activation URL one of the assistants gave you into your browser. This 
 
 ### Bots vs. Apps
 
-There are (broadly) two types of integrations you can write for Slack: single-team bots and Slack Apps. 
+There are (broadly) two types of integrations you can write for Slack: single-team bots and Slack Apps.
 
 A single-team bot takes a Slack token and can listen to events over a websocket (e.g. new messages or when a user joins a channel) and respond with HTTP API calls (e.g., post a message or add an emoji reaction). Single-team bots are restricted to just a single team (shocker) and are limited in the Slack APIs they can interact with (there are several). They cannot receive incoming HTTP requests from Slack (like we will get for message buttons) or respond to events from multiple teams.
 
@@ -133,4 +132,3 @@ Alright! Detour over! Now back to our regularly scheduled program.
 In the next exercise, we're going to use some message buttons to get an order together! Mmmm... I can almost taste that delicious "pizza"!
 
 Next Exercise: https://github.com/SparkPost/pizza-bot/tree/06-message-buttons
-
