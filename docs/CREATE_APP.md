@@ -7,7 +7,7 @@ Follow these steps to generate the `CLIENT_ID`, `ClIENT_SECRET`, and activation 
 4. Click “Create App”
 5. Under “Add features and functionality”, click “Interactive Components”
 6. Click “Enable Interactive Messages”
-7. Enter their ngrok url + ‘/slack/receive’ as the Request URL
+7. Enter the ngrok url + ‘/slack/receive’ as the Request URL
 ![Interactive Messages](./interactive_messages.png)
 8. Click “Enable Interactive Messages”
 9. Click on “Basic Information” on the left and expand “Add features and functionality”
@@ -20,7 +20,7 @@ Follow these steps to generate the `CLIENT_ID`, `ClIENT_SECRET`, and activation 
 15. Click on “Basic Information” on the left and expand “Add features and functionality”
 16. Click “Event Subscriptions”
 17. Click the toggle to “On”
-18. Enter their ngrok url + ‘/slack/receive’ as the Request URL
+18. Enter the ngrok url + ‘/slack/receive’ as the Request URL
 19. You should see Verified appear after you enter it.
 ![Enable Events](./enable_events.png)
 20. Under “Subscribe to Bot Events” Click “Add Bot User Event”
@@ -29,7 +29,7 @@ Follow these steps to generate the `CLIENT_ID`, `ClIENT_SECRET`, and activation 
 22. Click “Save Changes” at the bottom of the page
 23. Click on “Basic Information” on the left and expand “Add features and functionality”
 24. Click “Permissions”
-25. Add a Redirect URL for their ngrok url + ‘/oauth’
+25. Add a Redirect URL for the ngrok url + ‘/oauth’
 ![OAuth Redirect URLs](./oauth_redirect_urls.png)
 26. Click “Save URLs”
 27. Click on “Basic Information” on the left and expand “Install your app to your workspace”
