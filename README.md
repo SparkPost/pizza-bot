@@ -29,11 +29,11 @@ synchronous and cannot respond with an error!
 
 There are a few methods you'll want to use:
 
-* [convo.addMessage(textOrObject, thread_name)](https://github.com/howdyai/botkit#convoaddmessage)
-* [convo.addQuestion(text, callback, options, thread_name)](https://github.com/howdyai/botkit#convoaddquestion)
-* [convo.setVar(key, value)](https://github.com/howdyai/botkit#convosetvar)
-* [convo.gotoThread(thread_name)](https://github.com/howdyai/botkit#convogotothread)
-* [convo.activate()](https://github.com/howdyai/botkit#conversationactivate)
+* [convo.addMessage(textOrObject, thread_name)](https://github.com/howdyai/botkit/blob/master/docs/readme.md#convoaddmessage)
+* [convo.addQuestion(text, callback, options, thread_name)](https://github.com/howdyai/botkit/blob/master/docs/readme.md#convoaddquestion)
+* [convo.setVar(key, value)](https://github.com/howdyai/botkit/blob/master/docs/readme.md#convosetvar)
+* [convo.gotoThread(thread_name)](https://github.com/howdyai/botkit/blob/master/docs/readme.md#convogotothread)
+* [convo.activate()](https://github.com/howdyai/botkit/blob/master/docs/readme.md#convoactivate)
 
 
 Your flow will go something like this:
