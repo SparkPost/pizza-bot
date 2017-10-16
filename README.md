@@ -59,25 +59,17 @@ Make a local copy of your version using the `git clone` command. Use the "Clone 
 
 Type `cd pizza-bot` to change your working directory into your copy of the repo.
 
-### Create a .env File
+### Set up your .env file
 
-Create a file named `.env` in the root of your project. Add this line to the file:
+Copy the `.env.dist` file to `.env` in the root of your project. Now, you should have a `.env` file that looks like this
 
 ```bash
-export SLACK_TOKEN=replace_me
+SLACK_TOKEN=replace_me
 ```
 
 If you are comfortable creating your own Slack API token, you can follow [these instructions](./docs/CREATE_BOT.md). Otherwise, ask a mentor to create one for you. Once you have a Slack API token, replace `replace_me` with the token.
 
-Once you have your token, open a terminal and type:
-
-```bash
-source .env
-```
-
-This will expose the variables in your `.env` file to the current terminal session. **You will need to
-type `source .env` for each new terminal window you open.** If you see this error `Missing configuration. Config must
-include either slackToken AND/OR clientId, clientSecret, and port` you forgot to type `source .env` :smile:
+Once you have your token in place, you are all set!
 
 ### Install Depedencies
 
