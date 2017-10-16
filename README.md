@@ -4,7 +4,7 @@ Learn how to order 🍕 From Slack
 ## Exercise 2: List Nearby Stores
 * When your bot hears "I want a pizza", list stores close to this hard-coded address: `11 Times Square, New York, NY 10036` (we will make this dynamic in the next exercise). Use the `pizzapi` library to do this.
 * Tell the user you have found some stores nearby and print the list. You should print `<Store.StoreID>: <Store.AddressDescription>` one on each line, sorted by StoreID. Try to format the address nicely (it should fit on one line and just be the address).
-* Only show stores that are `Open`, `OnlineCapable`, and `IsOnlineNow`.
+* Only show stores that are `IsOpen`, `IsOnlineCapable`, and `IsOnlineNow`.
 * Run `npm test` and fix all problems that you find.
 
 ## Resources
