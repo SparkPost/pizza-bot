@@ -24,6 +24,7 @@
   "homepage": "https://github.com/SparkPost/pizza-bot#readme",
   "dependencies": {
     "dominos": "^2.1.1",
+    "dotenv": "^4.0.0",
     "skellington": "^1.1.1",
     "skellington-logger": "^1.1.0"
   },
